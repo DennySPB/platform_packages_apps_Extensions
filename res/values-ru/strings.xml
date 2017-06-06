@@ -1158,4 +1158,10 @@
   <string name="ga_64">64px</string>
   <string name="ga_68">68px</string>
 
+    <!-- Volume key cursor control -->
+    <string name="volbtn_cursor_control_title">Кнопка громкости управляет курсором</string>
+    <string name="volbtn_cursor_control_off">Отключено</string>
+    <string name="volbtn_cursor_control_on">Громкость вверх/вниз двигает курсор влево/вправо</string>
+    <string name="volbtn_cursor_control_on_reverse">Громкость вверх/вниз двигает курсор вправо/влево</string>
+
 </resources>
