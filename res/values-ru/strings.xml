@@ -1164,4 +1164,8 @@
     <string name="volbtn_cursor_control_on">Громкость вверх/вниз двигает курсор влево/вправо</string>
     <string name="volbtn_cursor_control_on_reverse">Громкость вверх/вниз двигает курсор вправо/влево</string>
 
+    <!-- Incall Home button behavior-->
+    <string name="allow_incall_home_title">Кнопка Домой при звонке</string>
+    <string name="allow_incall_home_summary">Позволяет использовать кнопку Домой когда идет входящий звонок</string>
+
 </resources>
