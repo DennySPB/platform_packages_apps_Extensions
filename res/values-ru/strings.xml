@@ -1168,4 +1168,8 @@
     <string name="allow_incall_home_title">Кнопка Домой при звонке</string>
     <string name="allow_incall_home_summary">Позволяет использовать кнопку Домой когда идет входящий звонок</string>
 
+    <string name="incall_vibrate_connect_title">Вибрация при ответе (звонок)</string>
+    <string name="incall_vibrate_disconnect_title">Вибрация при откл. (звонок)</string>
+
+
 </resources>

@@ -52,11 +52,15 @@ import org.aospextended.extensions.preference.CustomSeekBarPreference;
 public class GeneralTweaks extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
+    public static final String VIBRATE_ON_CONNECT = "vibrate_on_connect";
+    public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
 
+    private SwitchPreference mVibrateOnConnect;
+    private SwitchPreference mVibrateOnDisconnect;
     private CustomSeekBarPreference mScreenshotDelay;
     private ListPreference mMsob;
     private ListPreference mScreenshotType;
@@ -71,6 +75,18 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefSet = getPreferenceScreen();
+
+        mVibrateOnConnect = (SwitchPreference) findPreference(VIBRATE_ON_CONNECT);
+        mVibrateOnConnect.setOnPreferenceChangeListener(this);
+        int vibconnect = Settings.System.getInt(getContentResolver(),
+                VIBRATE_ON_CONNECT, 0);
+        mVibrateOnConnect.setChecked(vibconnect != 0);
+
+        mVibrateOnDisconnect = (SwitchPreference) findPreference(VIBRATE_ON_DISCONNECT);
+        mVibrateOnDisconnect.setOnPreferenceChangeListener(this);
+        int vibdisconnect = Settings.System.getInt(getContentResolver(),
+                VIBRATE_ON_DISCONNECT, 0);
+        mVibrateOnDisconnect.setChecked(vibdisconnect != 0);
 
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(resolver,
@@ -126,7 +142,17 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
             mMsob.setValue(String.valueOf(newValue));
             mMsob.setSummary(mMsob.getEntry());
             return true;
-        } else if  (preference == mScreenshotType) {
+    	} else if (preference == mVibrateOnConnect) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), VIBRATE_ON_CONNECT,
+                    value ? 1 : 0);
+            return true;
+    	} else if (preference == mVibrateOnDisconnect) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(), VIBRATE_ON_DISCONNECT,
+                    value ? 1 : 0);
+            return true;
+	}else if  (preference == mScreenshotType) {
             int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());
             mScreenshotType.setSummary(
                     mScreenshotType.getEntries()[mScreenshotTypeValue]);
