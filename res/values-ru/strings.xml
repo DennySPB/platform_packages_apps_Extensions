@@ -24,6 +24,7 @@
     <string name="cancel">Отмена</string>
     <string name="choose_app">Выбрать приложение</string>
     <string name="general_category">Общие</string>
+    <string name="incall_category">Вибрация при звонке</string>
     <string name="gestures_category">Жесты</string>
     <string name="music_category">Музыка</string>
     <string name="weather_category">Погода на экране блокировки</string>
@@ -1168,8 +1169,10 @@
     <string name="allow_incall_home_title">Кнопка Домой при звонке</string>
     <string name="allow_incall_home_summary">Позволяет использовать кнопку Домой когда идет входящий звонок</string>
 
-    <string name="incall_vibrate_connect_title">Вибрация при ответе (звонок)</string>
-    <string name="incall_vibrate_disconnect_title">Вибрация при откл. (звонок)</string>
+    <string name="incall_vibrate_connect_title">Вибрация при ответе</string>
+    <string name="incall_vibrate_connect_time_title">Длительность</string>
+    <string name="incall_vibrate_disconnect_title">Вибрация при завершении звонка</string>
+    <string name="incall_vibrate_disconnect_time_title">Длительность</string>
 
 
 </resources>

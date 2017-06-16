@@ -54,6 +54,8 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_MEDIA_SCANNER_ON_BOOT = "media_scanner_on_boot";
     public static final String VIBRATE_ON_CONNECT = "vibrate_on_connect";
     public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
+    public static final String VIBRATE_ON_CONNECT_TIME = "vibrate_on_connect_time";
+    public static final String VIBRATE_ON_DISCONNECT_TIME = "vibrate_on_disconnect_time";
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
@@ -62,6 +64,8 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
     private SwitchPreference mVibrateOnConnect;
     private SwitchPreference mVibrateOnDisconnect;
     private CustomSeekBarPreference mScreenshotDelay;
+    private CustomSeekBarPreference mVibrateOnConnectTime;
+    private CustomSeekBarPreference mVibrateOnDisconnectTime;
     private ListPreference mMsob;
     private ListPreference mScreenshotType;
     private ListPreference mWiredHeadsetRingtoneFocus;
@@ -82,11 +86,23 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
                 VIBRATE_ON_CONNECT, 0);
         mVibrateOnConnect.setChecked(vibconnect != 0);
 
+        mVibrateOnConnectTime = (CustomSeekBarPreference) findPreference(VIBRATE_ON_CONNECT_TIME);
+        int VibrateOnConnectTime = Settings.System.getInt(getContentResolver(),
+                                Settings.System.VIBRATE_ON_CONNECT_TIME, 200);
+        mVibrateOnConnectTime.setValue(VibrateOnConnectTime / 1);
+        mVibrateOnConnectTime.setOnPreferenceChangeListener(this);
+
         mVibrateOnDisconnect = (SwitchPreference) findPreference(VIBRATE_ON_DISCONNECT);
         mVibrateOnDisconnect.setOnPreferenceChangeListener(this);
         int vibdisconnect = Settings.System.getInt(getContentResolver(),
                 VIBRATE_ON_DISCONNECT, 0);
         mVibrateOnDisconnect.setChecked(vibdisconnect != 0);
+
+	mVibrateOnDisconnectTime = (CustomSeekBarPreference) findPreference(VIBRATE_ON_DISCONNECT_TIME);
+        int VibrateOnDisconnectTime = Settings.System.getInt(getContentResolver(),
+                                Settings.System.VIBRATE_ON_DISCONNECT_TIME, 100);
+        mVibrateOnDisconnectTime.setValue(VibrateOnDisconnectTime / 1);
+        mVibrateOnDisconnectTime.setOnPreferenceChangeListener(this);
 
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(resolver,
@@ -151,6 +167,16 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(), VIBRATE_ON_DISCONNECT,
                     value ? 1 : 0);
+            return true;
+        } else if (preference == mVibrateOnConnectTime) {
+            int valueConnect = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VIBRATE_ON_CONNECT_TIME, valueConnect * 1);
+            return true;
+        } else if (preference == mVibrateOnDisconnectTime) {
+            int valueDisconnect = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.VIBRATE_ON_DISCONNECT_TIME, valueDisconnect * 1);
             return true;
 	}else if  (preference == mScreenshotType) {
             int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());
