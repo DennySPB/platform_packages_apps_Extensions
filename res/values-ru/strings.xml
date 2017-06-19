@@ -1174,5 +1174,8 @@
     <string name="incall_vibrate_disconnect_title">Вибрация при завершении звонка</string>
     <string name="incall_vibrate_disconnect_time_title">Длительность</string>
 
+    <!-- Home button wake up -->
+    <string name="button_wake_title">Пробуждение</string>
+    <string name="home_wake_summary">Нажатие кнопки Домой пробуждает устройство</string>
 
 </resources>
