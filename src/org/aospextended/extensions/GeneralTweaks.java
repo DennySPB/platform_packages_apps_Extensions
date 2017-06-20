@@ -56,6 +56,7 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
     public static final String VIBRATE_ON_DISCONNECT = "vibrate_on_disconnect";
     public static final String VIBRATE_ON_CONNECT_TIME = "vibrate_on_connect_time";
     public static final String VIBRATE_ON_DISCONNECT_TIME = "vibrate_on_disconnect_time";
+    public static final String NIGHTMODE_COLOR_TEMP = "nightmode_color_temp";
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
@@ -66,10 +67,12 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
     private CustomSeekBarPreference mScreenshotDelay;
     private CustomSeekBarPreference mVibrateOnConnectTime;
     private CustomSeekBarPreference mVibrateOnDisconnectTime;
+    private CustomSeekBarPreference mNightModeColorTemp;
     private ListPreference mMsob;
     private ListPreference mScreenshotType;
     private ListPreference mWiredHeadsetRingtoneFocus;
     private ListPreference mLaunchPlayerHeadsetConnection;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -103,6 +106,12 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
                                 Settings.System.VIBRATE_ON_DISCONNECT_TIME, 100);
         mVibrateOnDisconnectTime.setValue(VibrateOnDisconnectTime / 1);
         mVibrateOnDisconnectTime.setOnPreferenceChangeListener(this);
+
+        mNightModeColorTemp = (CustomSeekBarPreference) findPreference(NIGHTMODE_COLOR_TEMP);
+        int NightModeColorTemp = Settings.System.getInt(getContentResolver(),
+                Settings.System.NIGHTMODE_COLOR_TEMP, 3400);
+        mNightModeColorTemp.setValue(NightModeColorTemp / 1);
+        mNightModeColorTemp.setOnPreferenceChangeListener(this);
 
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(resolver,
@@ -157,6 +166,11 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
                     Integer.valueOf(String.valueOf(newValue)));
             mMsob.setValue(String.valueOf(newValue));
             mMsob.setSummary(mMsob.getEntry());
+            return true;
+        } else if (preference == mNightModeColorTemp) {
+	    int valueColorTemp = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NIGHTMODE_COLOR_TEMP, valueColorTemp * 1);
             return true;
     	} else if (preference == mVibrateOnConnect) {
             boolean value = (Boolean) newValue;

@@ -26,6 +26,7 @@
     <string name="choose_app">Choose app</string>
     <string name="general_category">General</string>
     <string name="incall_category">In-call options</string>
+    <string name="nightmode_category">Nightmode options</string>
     <string name="gestures_category">Gestures</string>
     <string name="music_category">Music</string>
     <string name="weather_category">Lockscreen weather</string>
@@ -1301,12 +1302,17 @@
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Home button when ringing</string>
     <string name="allow_incall_home_summary">Allow to use Home button when device is ringing</string>
+    <string name="ring_home_button_title">Answer call by Home button</string>
+    <string name="ring_home_button_summary">Allow answer call by Home button when device is ringing</string>
+
 
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_connect_time_title">Duration</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
     <string name="incall_vibrate_disconnect_time_title">Duration</string>
 
+    <!-- Nightmode temperature settings-->
+    <string name="nightmode_temp_title">Allow to select comfort color temperature in NightMode</string>
 
 </resources>
 

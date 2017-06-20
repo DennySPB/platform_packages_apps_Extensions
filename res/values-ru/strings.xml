@@ -25,6 +25,7 @@
     <string name="choose_app">Выбрать приложение</string>
     <string name="general_category">Общие</string>
     <string name="incall_category">Вибрация при звонке</string>
+    <string name="nightmode_category">Режим ночного дисплея</string>
     <string name="gestures_category">Жесты</string>
     <string name="music_category">Музыка</string>
     <string name="weather_category">Погода на экране блокировки</string>
@@ -1167,7 +1168,9 @@
 
     <!-- Incall Home button behavior-->
     <string name="allow_incall_home_title">Кнопка Домой при звонке</string>
-    <string name="allow_incall_home_summary">Позволяет использовать кнопку Домой когда идет входящий звонок</string>
+    <string name="allow_incall_home_summary">Не отключать Домой во время звонка</string>
+    <string name="ring_home_button_title">Ответ на звонок кнопкой Домой</string>
+    <string name="ring_home_button_summary">При входящем звонке кнопка Домой используется для ответа</string>
 
     <string name="incall_vibrate_connect_title">Вибрация при ответе</string>
     <string name="incall_vibrate_connect_time_title">Длительность</string>
@@ -1177,5 +1180,8 @@
     <!-- Home button wake up -->
     <string name="button_wake_title">Пробуждение</string>
     <string name="home_wake_summary">Нажатие кнопки Домой пробуждает устройство</string>
+
+    <!-- Nightmode temperature settings-->
+    <string name="nightmode_temp_title">Выбор цветовой температуры в ночном режиме</string>
 
 </resources>

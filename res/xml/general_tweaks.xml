@@ -54,6 +54,21 @@
     android:dependency="vibrate_on_disconnect" />
     </PreferenceCategory>
 
+
+    <PreferenceCategory
+        android:key="general_tweaks_nightmode_category"
+        android:title="@string/nightmode_category">
+
+    <org.aospextended.extensions.preference.CustomSeekBarPreference
+        android:key="nightmode_color_temp"
+        android:title="@string/nightmode_temp_title"
+        settings:max="5000"
+        settings:min="1000"
+        settings:units="K"
+        settings:interval="50"
+        android:persistent="false"/>
+    </PreferenceCategory>
+
     <PreferenceCategory
         android:key="general_tweaks_general_category"
         android:title="@string/general_category">
