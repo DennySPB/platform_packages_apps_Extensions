@@ -34,16 +34,16 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class Navigation extends SettingsPreferenceFragment implements
+public class Panels extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    private static final String TAG = "Navigation";
+    private static final String TAG = "Panels";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.navigation);
+        addPreferencesFromResource(R.xml.panels);
 
         ContentResolver resolver = getActivity().getContentResolver();
     }

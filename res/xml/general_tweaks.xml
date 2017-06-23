@@ -17,45 +17,6 @@
     android:title="@string/general_tweaks_title">
 
     <PreferenceCategory
-        android:key="general_tweaks_incall_category"
-        android:title="@string/incall_category">
-
-    <org.aospextended.extensions.preference.SystemSettingSwitchPreference
-        android:key="vibrate_on_connect"
-        android:title="@string/incall_vibrate_connect_title"
-        android:disableDependentsState="false"
-        android:defaultValue="false" />
-
-    <org.aospextended.extensions.preference.CustomSeekBarPreference
-        android:key="vibrate_on_connect_time"
-        android:title="@string/incall_vibrate_connect_time_title"
-        settings:max="1000"
-        settings:min="0"
-        settings:units="ms"
-        settings:interval="10"
-        android:persistent="false"
-    android:dependency="vibrate_on_connect" />
-
-
-    <org.aospextended.extensions.preference.SystemSettingSwitchPreference
-        android:key="vibrate_on_disconnect"
-        android:title="@string/incall_vibrate_disconnect_title"
-        android:disableDependentsState="false"
-        android:defaultValue="false" />
-
-    <org.aospextended.extensions.preference.CustomSeekBarPreference
-        android:key="vibrate_on_disconnect_time"
-        android:title="@string/incall_vibrate_disconnect_time_title"
-        settings:max="1000"
-        settings:min="0"
-        settings:units="ms"
-        settings:interval="10"
-        android:persistent="false"
-    android:dependency="vibrate_on_disconnect" />
-    </PreferenceCategory>
-
-
-    <PreferenceCategory
         android:key="general_tweaks_nightmode_category"
         android:title="@string/nightmode_category">
 

@@ -27,6 +27,18 @@
             android:layout="@layout/preference_general_tweaks"
             android:title="@string/general_tweaks_title" />   
 
+         <PreferenceScreen
+            android:key="incall"
+            android:fragment="org.aospextended.extensions.InCallSettings"
+            android:layout="@layout/preference_incall"
+            android:title="@string/incall_title" />   
+
+         <PreferenceScreen
+            android:key="recents_ui"
+            android:fragment="org.aospextended.extensions.RecentsUI"
+            android:layout="@layout/preference_recents_ui"
+            android:title="@string/recents_ui_title" />
+
           <PreferenceScreen
             android:key="blur"
             android:fragment="org.aospextended.extensions.Blur"

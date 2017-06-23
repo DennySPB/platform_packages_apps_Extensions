@@ -24,7 +24,10 @@
     <string name="cancel">Отмена</string>
     <string name="choose_app">Выбрать приложение</string>
     <string name="general_category">Общие</string>
-    <string name="incall_category">Вибрация при звонке</string>
+    <string name="incall_vibration_category">Вибрация при звонке</string>
+    <string name="incall_home_category">Кнопка Домой</string>
+    <string name="incall_sensors_category">Датчики</string>
+    <string name="incall_record_category">Опции записи</string>
     <string name="nightmode_category">Режим ночного дисплея</string>
     <string name="gestures_category">Жесты</string>
     <string name="music_category">Музыка</string>
@@ -53,10 +56,10 @@
     <!-- Extensions categories -->
     <string name="recents_category">Запущенные</string>
     <string name="status_bar_category">Строка состояния</string>
-    <string name="notifications_panel_category">Панель уведомлений</string>
+<!--    <string name="notifications_panel_category">Панель уведомлений</string> -->
     <string name="system_category">Система</string>
     <string name="statusbar_items_category">Элементы строки состояния</string>
-    <string name="navigation_category">Панель навигации</string>
+    <string name="panels_category">Панели</string>
     <string name="lockscreen_category">Экран блокировки</string>
     <string name="breathing_notifications_category">Дыщащие уведомления</string>
     <string name="build_tweaks_summary_title">Расширенные настройки</string>
@@ -96,7 +99,7 @@
     <string name="brightness_icon_summary">Показать значок яркости слева ползунка для регулировки уровня авто-яркости</string>
 
     <!-- Quick Settings -->
-    <string name="quick_settings_title">Быстрые настройки</string>
+    <string name="quick_settings_title">Панель быстрого доступа</string>
     <string name="status_bar_quick_qs_pulldown_title">Быстрое раскрытие</string>
     <string name="status_bar_quick_qs_pulldown_summary">Правая сторона строки состояния сразу раскрывает быстрые настройки</string>
 
@@ -105,6 +108,9 @@
 
     <!-- General Tweaks -->
     <string name="general_tweaks_title">Основные настройки</string>
+
+    <!-- InCall options -->
+    <string name="incall_title">Вызов</string>
 
     <!-- Notifications -->
     <string name="notifications_title">Уведомления</string>
@@ -1176,6 +1182,21 @@
     <string name="incall_vibrate_connect_time_title">Длительность</string>
     <string name="incall_vibrate_disconnect_title">Вибрация при завершении звонка</string>
     <string name="incall_vibrate_disconnect_time_title">Длительность</string>
+    <string name="proximity_auto_speaker_title">Включение громкой связи по датчику приближения</string>
+    <string name="proximity_auto_speaker_summary">Автоматически включать громкую связь, при удалении телефона от уха</string>
+    <string name="proximity_auto_speaker_delay_title">Задержка включения громкой связи</string>
+    <string name="proximity_auto_speaker_delay_dialog_title">Задержка включения громкой связи в (мс)</string>
+    <string name="proximity_auto_speaker_delay_summary">Громкая связь будет включена через <xliff:g id="number">%d</xliff:g> мс</string>
+    <string name="proximity_auto_speaker_incall_only_title">Только во время входящего вызова</string>
+    <string name="proximity_auto_speaker_incall_only_summary">При исходящих звонках функция активируется только после ответа на вызов</string>
+
+    <!-- Smart Options -->
+    <string name="smart_mute_title">Умное отключение звука</string>
+    <string name="smart_mute_summary">Отключать звук входящего вызова перевернув устройство</string>
+
+    <string name="call_recording_title">Автозапись</string>
+    <string name="call_recording_summary">Автоматическое включение записи звонка</string>
+
 
     <!-- Home button wake up -->
     <string name="button_wake_title">Пробуждение</string>

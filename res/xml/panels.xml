@@ -26,4 +26,17 @@
         android:fragment="org.aospextended.extensions.dui.NavbarSettings"
         android:layout="@layout/preference_navigation"
         android:title="@string/navigationbar_settings_title" />
+
+         <PreferenceScreen
+            android:key="quick_settings"
+            android:fragment="org.aospextended.extensions.statusbar.QuickSettings"
+            android:layout="@layout/preference_quick_settings"
+            android:title="@string/quick_settings_title" />
+
+         <PreferenceScreen
+            android:key="notifications"
+            android:fragment="org.aospextended.extensions.Notifications"
+            android:layout="@layout/preference_notifications"
+            android:title="@string/notifications_title" />
+
 </PreferenceScreen>

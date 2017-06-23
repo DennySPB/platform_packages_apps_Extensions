@@ -25,7 +25,10 @@
     <string name="cancel">Cancel</string>
     <string name="choose_app">Choose app</string>
     <string name="general_category">General</string>
-    <string name="incall_category">In-call options</string>
+    <string name="incall_vibration_category">Vibration options</string>
+    <string name="incall_home_category">Home button options</string>
+    <string name="incall_sensors_category">Sensors options</string>
+    <string name="incall_record_category">Call recorder options</string>
     <string name="nightmode_category">Nightmode options</string>
     <string name="gestures_category">Gestures</string>
     <string name="music_category">Music</string>
@@ -53,7 +56,7 @@
     <string name="system_category">System</string>
     <string name="lockscreen_category">Lockscreen</string>
     <string name="statusbar_items_category">Statusbar items</string>
-    <string name="navigation_category">Navigation</string>
+    <string name="panels_category">Panels</string>
     <string name="breathing_notifications_category">Breathing Notifications</string>
     <string name="build_tweaks_summary_title">Extend your device!</string>
     <string name="system_animations">System Animations</string>
@@ -91,6 +94,9 @@
 
     <!-- General Tweaks -->
     <string name="general_tweaks_title">General Tweaks</string>
+
+    <!-- General Tweaks -->
+    <string name="incall_title">In-call options</string>
 
     <!-- Notifications -->
     <string name="notifications_title">Notifications</string>
@@ -1305,11 +1311,22 @@
     <string name="ring_home_button_title">Answer call by Home button</string>
     <string name="ring_home_button_summary">Allow answer call by Home button when device is ringing</string>
 
-
     <string name="incall_vibrate_connect_title">Vibrate on connect</string>
     <string name="incall_vibrate_connect_time_title">Duration</string>
     <string name="incall_vibrate_disconnect_title">Vibrate on disconnect</string>
     <string name="incall_vibrate_disconnect_time_title">Duration</string>
+    <string name="proximity_auto_speaker_title">Automatic proximity speakerphone</string>
+    <string name="proximity_auto_speaker_summary">Enable speakerphone automatically when your phone is removed from your ear</string>
+    <string name="proximity_auto_speaker_delay_title">Speakerphone delay</string>
+    <string name="proximity_auto_speaker_delay_dialog_title">Speakerphone delay in (ms)</string>
+    <string name="proximity_auto_speaker_delay_summary">Speakerphone will be activated in <xliff:g id="number">%d</xliff:g> ms</string>
+    <string name="proximity_auto_speaker_incall_only_title">Only while in call</string>
+    <string name="proximity_auto_speaker_incall_only_summary">On outgoing calls, listener will only become active after the receiving party answers</string>
+    <string name="smart_mute_title">Smart mute</string>
+    <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
+    <string name="call_recording_title">Auto call recording</string>
+    <string name="call_recording_summary">Recording automatically after call</string>
+
 
     <!-- Nightmode temperature settings-->
     <string name="nightmode_temp_title">Allow to select comfort color temperature in NightMode</string>

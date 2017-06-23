@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2016 AospExtended ROM Project
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+          http://www.apache.org/licenses/LICENSE-2.0
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<PreferenceScreen 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/incall_title">
+
+    <PreferenceCategory
+        android:key="incall_vibration_category"
+        android:title="@string/incall_vibration_category">
+
+    <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+        android:key="vibrate_on_connect"
+        android:title="@string/incall_vibrate_connect_title"
+        android:disableDependentsState="false"
+        android:defaultValue="false" />
+
+    <org.aospextended.extensions.preference.CustomSeekBarPreference
+        android:key="vibrate_on_connect_time"
+        android:title="@string/incall_vibrate_connect_time_title"
+        settings:max="1000"
+        settings:min="0"
+        settings:units="ms"
+        settings:interval="10"
+        android:persistent="false"
+    android:dependency="vibrate_on_connect" />
+
+    <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+        android:key="vibrate_on_disconnect"
+        android:title="@string/incall_vibrate_disconnect_title"
+        android:disableDependentsState="false"
+        android:defaultValue="false" />
+
+    <org.aospextended.extensions.preference.CustomSeekBarPreference
+        android:key="vibrate_on_disconnect_time"
+        android:title="@string/incall_vibrate_disconnect_time_title"
+        settings:max="1000"
+        settings:min="0"
+        settings:units="ms"
+        settings:interval="10"
+        android:persistent="false"
+    android:dependency="vibrate_on_disconnect" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="incall_home_category"
+        android:title="@string/incall_home_category">
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="allow_incall_home"
+            android:title="@string/allow_incall_home_title"
+            android:summary="@string/allow_incall_home_summary"
+            android:defaultValue="true" 
+	    android:disableDependentsState="false" />
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="ring_home_button_behavior"
+            android:title="@string/ring_home_button_title"
+            android:summary="@string/ring_home_button_summary"
+            android:defaultValue="true" 
+    	    android:dependency="allow_incall_home" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+	android:key="incall_sensors_category"
+        android:title="@string/incall_sensors_category">
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="proximity_auto_speaker"
+            android:title="@string/proximity_auto_speaker_title"
+            android:summary="@string/proximity_auto_speaker_summary"
+            android:defaultValue="false" 
+    	    android:disableDependentsState="false" />
+
+        <ListPreference
+            android:key="proximity_auto_speaker_delay"
+            android:title="@string/proximity_auto_speaker_delay_title"
+            android:entries="@array/proximity_delay_entries"
+            android:entryValues="@array/proximity_delay_values"
+            android:persistent="false"
+            android:dependency="proximity_auto_speaker" />
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="proximity_auto_speaker_incall_only"
+            android:title="@string/proximity_auto_speaker_incall_only_title"
+            android:summary="@string/proximity_auto_speaker_incall_only_summary"
+            android:defaultValue="false"
+            android:dependency="proximity_auto_speaker" />
+
+<!--        <SwitchPreference
+            android:key="button_smart_mute_key"
+            android:title="@string/smart_mute_title"
+            android:summary="@string/smart_mute_summary"
+            android:defaultValue="false" />
+-->
+    </PreferenceCategory>
+
+<!--    <PreferenceCategory
+	android:key="incall_record_category"
+        android:title="@string/incall_record_category">
+
+        <SwitchPreference
+            android:key="call_recording_automatically_key"
+            android:title="@string/call_recording_title"
+            android:summary="@string/call_recording_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+-->
+
+
+</PreferenceScreen>
