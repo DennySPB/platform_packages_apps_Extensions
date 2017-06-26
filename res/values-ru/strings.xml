@@ -757,8 +757,10 @@
     <string name="hide_apps_from_recents_summary">Выбрать, какие приложения нужно исключить при Завершить все</string>
 
     <!-- fingerprint authentication vibration -->
-    <string name="fprint_sucess_vib_title">Вибрация при отпечатке пальца</string>
+    <string name="fprint_sucess_vib_title">Вибрация при авторизации</string>
     <string name="fprint_sucess_vib_summary">Вибрировать при успешной авторизации отпечатком пальца</string>
+    <string name="fprint_error_vib_title">Вибрация при ошибке авторизации</string>
+    <string name="fprint_error_vib_summary">Вибрировать при ошибке авторизации отпечатком пальца</string>
 
     <!-- XOSP Blur personalizations -->
     <string name="settings_blur_cat">Размытие</string>

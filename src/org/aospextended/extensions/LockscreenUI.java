@@ -78,6 +78,7 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
     private static final String FP_CAT = "lockscreen_ui_gestures_category";
     private static final String FP_UNLOCK_KEYSTORE = "fp_unlock_keystore";
     private static final String FINGERPRINT_VIB = "fingerprint_success_vib";
+    private static final String FINGERPRINT_ERROR_VIB = "fingerprint_error_vib";
     private static final String KEY_OMNIJAWS = "omnijaws";
 
     private static final String WEATHER_ICON_PACK = "weather_icon_pack";
@@ -92,6 +93,7 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
     private ListPreference mHideWeather;
     private CustomSeekBarPreference mNumberOfNotifications;
     private SystemSettingSwitchPreference mFingerprintVib;
+    private SystemSettingSwitchPreference mFingerprintVibError;
     private FingerprintManager mFingerprintManager;
 
     private ContentResolver mResolver;
@@ -146,6 +148,7 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
 
         mFingerprintManager = (FingerprintManager) getActivity().getSystemService(Context.FINGERPRINT_SERVICE);
         mFingerprintVib = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_VIB);
+        mFingerprintVibError = (SystemSettingSwitchPreference) findPreference(FINGERPRINT_ERROR_VIB);
         mFpKeystore = (SystemSettingSwitchPreference) findPreference(FP_UNLOCK_KEYSTORE);
         if (!mFingerprintManager.isHardwareDetected()){
             fingerprintCategory.removePreference(mFingerprintVib);
@@ -154,6 +157,10 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
         mFingerprintVib.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FINGERPRINT_SUCCESS_VIB, 1) == 1));
         mFingerprintVib.setOnPreferenceChangeListener(this);
+
+        mFingerprintVibError.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.FINGERPRINT_ERROR_VIB, 1) == 1));
+        mFingerprintVibError.setOnPreferenceChangeListener(this);
 
         mFpKeystore.setChecked((Settings.System.getInt(getContentResolver(),
                 Settings.System.FP_UNLOCK_KEYSTORE, 0) == 1));
@@ -208,6 +215,11 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
             boolean value = (Boolean) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.FINGERPRINT_SUCCESS_VIB, value ? 1 : 0);
+            return true;
+        } else if (preference == mFingerprintVibError) {
+            boolean value = (Boolean) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FINGERPRINT_ERROR_VIB, value ? 1 : 0);
             return true;
         } else if (preference == mFpKeystore) {
             boolean value = (Boolean) newValue;
