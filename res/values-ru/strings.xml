@@ -444,6 +444,8 @@
     <string name="lockscreen_visualizer_title">Показать визуализацию музыки</string>
 
     <!-- Lockscreen clock fonts -->
+    <string name="lockdate_font_size_title">Размер шрифта даты</string>
+    <string name="lockclock_font_size_title">Размер шрифта часов</string>
     <string name="lock_clock_font_title">Шрифт часов экрана блокировки</string>
     <string name="lock_clock_font_summary">Изменить шрифт часов экрана блокировки установленный по умолчанию</string>
     <string name="lock_clock_font_normal">Roboto</string>
@@ -510,6 +512,9 @@
     <string name="lock_clock_weather_section_summary">Посмотреть или изменить отображение погоды из виджета \'cLock\' </string>
     <string name="lock_clock_calendar_section_title">События календаря</string>
     <string name="lock_clock_calendar_section_summary">Посмотреть или изменить отображение событий календаря из виджета \'cLock\' </string>
+    <string name="lockscreen_clock_date_color">Цвет даты</string>
+    <string name="lockscreen_clock_color">Цвет часов</string>
+
 
     <!-- statusbar brightness control -->
     <string name="status_bar_toggle_brightness">Настройка яркости</string>
@@ -565,12 +570,17 @@
     <string name="lockscreen_qs_disabled_summary">Отключить меню быстрых настроек при настройке защиты на экране блокировки</string>
 
     <!-- Status Bar Ticker -->
-    <string name="ticker_screen_title">Ticker</string>
-    <string name="ticker_title">Ticker в строке состояния</string>
-    <string name="ticker_screen_summary">Настроить стиль ticker</string>
-    <string name="ticker_summary">Включить старый ticker строки состояния</string>
+    <string name="ticker_screen_title">Бегущая строка</string>
+    <string name="ticker_title">Бегущая строка в строке состояния</string>
+    <string name="ticker_screen_summary">Настроить стиль</string>
+    <string name="ticker_summary">Включить старую бегущую строку состояния</string>
     <string name="ticker_font_style_title">Стиль шрифта</string>
     <string name="ticker_font_size_title">Размер шрифта</string>
+
+    <!-- Status bar notification ticker -->
+    <string name="ticker_disabled">Нет бегущей строки</string>
+    <string name="ticker_enabled">Уведомления</string>
+    <string name="ticker_media_enabled">Уведомления и музыка</string>
 
     <!-- Hide Lockscreen clock, date & alarm -->
     <string name="hide_lockscreen_items_title">Элементы экрана блокировки</string>
@@ -625,7 +635,7 @@
     <string name="power_menu_voice_title">Голосовой поиск</string>
     <string name="power_menu_settings_title">Настройка ярлыков</string>
     <string name="power_menu_lockdown_title">Блокировка</string>
-
+    <string name="power_menu_onthego_title">Режим На-Ходуe</string>
     <string name="power_menu_bug_report_title">Отчет об ошибке</string>
     <string name="power_menu_sound_title">Звуковая панель</string>
     <string name="power_menu_bug_report_disabled">Отчеты об ошибках отключены в настройках</string>
@@ -675,6 +685,15 @@
     <string name="backlight_timeout_15s">15 сек</string>
     <string name="backlight_timeout_20s">20 сек</string>
     <string name="backlight_timeout_30s">30 сек</string>
+
+    <!-- Launch music player when headset is connected -->
+    <string name="headset_connect_player_title">Запуск плеера</string>
+    <string name="headset_connect_player_disabled">Отключено</string>
+    <string name="headset_connect_player_wired">Когда подключена проводная гарнитура</string>
+    <string name="headset_connect_player_bt_no_carkit">Когда подключена беспроводная гарнитура (без carkit)</string>
+    <string name="headset_connect_player_bt">Когда подключена беспроводная гарнитура</string>
+    <string name="headset_connect_player_both_no_carkit">Когда подключена беспроводная либо проводная гарнитура (без carkit)</string>
+    <string name="headset_connect_player_both">Когда подключена проводная, либо беспроводная гарнитура</string>
 
     <!-- Enable keys backlight-->
     <string name="button_brightness_title">Включить подсветку</string>
@@ -1043,6 +1062,103 @@
     <string name="alarm_blocker_warning_title">Продолжайте с осторожностью</string>
     <string name="alarm_blocker_warning">Блокировка alarm-ов приложений может привести к нестабильной работе, вылетам и т.д.</string>
 
+    <!-- Slim DSLV -->
+    <string name="shortcut_action_none">Без действия</string>
+    <string name="shortcut_action_longpress">Длительное нажатие:</string>
+    <string name="shortcut_action_select_action_longpress">Выбор действия при длительном нажатии:</string>
+    <string name="shortcut_action_select_action">Выбор действия:</string>
+    <string name="shortcut_action_select_action_newaction">Выбор нового дейтсвия:</string>
+    <string name="shortcut_action_reset">Сброс</string>
+    <string name="shortcut_action_add">Добавить</string>
+    <string name="shortcut_action_reset_message">Сбросить все записи?</string>
+    <string name="shortcut_action_max">Максимальное количество записей достигнуто</string>
+    <string name="shortcut_action_warning">Внимание</string>
+    <string name="shortcut_action_warning_message">Последнюю запись удалить невозможно</string>
+    <string name="shortcut_action_disable_message">Отключено\nДобавьте запись чтобы включить</string>
+    <string name="shortcut_image_not_valid">Выбранное приложения не возвращает поддекрживаемую иконку. Выберите другое приложение.</string>
+    <string name="shortcut_duplicate_entry">Выбранное дествие не может быть добавленно дважды</string>
+    <string name="shortcut_action_help_shortcut">ярлык</string>
+    <string name="shortcut_action_help_button">кнопка</string>
+    <string name="shortcut_action_help_app">приложение</string>
+    <string name="shortcut_action_help_icon">, при выборе значка будут отображаться параметры настройки</string>
+
+    <string name="shortcut_action_help_main">Чтобы добавить %1$s, выберите иконку Добавить. Если %1$s добавлено, выбор строки изменит цель %2$s\n\nЧтобы удалить %1$s, используйте свайп влево/вправо. Для изменения порядка %1$s в списке, используйте перетаскивание за якорь слева.\n\nЧтобы очистить или сбросить, используйте кнопку Сброс.</string>
+    <string name="shortcut_action_help_delete_last_entry">Удаление каждой записи %1$s в списке, отключит функцию полностью.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Удаление каждой записи %1$s в списке, отключит следующий слой полностью.</string>
+
+    <string name="shortcuts_applications">Приложения</string>
+    <string name="shortcuts_select_custom_app_title">Выбор приложения</string>
+    <string name="shortcuts_icon_picker_type">Выбор типа иконки:</string>
+    <string name="shortcuts_icon_default">По умолчанию</string>
+    <string name="shortcuts_icon_presets">Системные иконки</string>
+    <string name="shortcuts_icon_custom">Галерея</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Выбор иконки</string>
+
+    <string name="shortcuts_icon_picker_alarm">Будильнк</string>
+    <string name="shortcuts_icon_picker_andy">Энди</string>
+    <string name="shortcuts_icon_picker_battery">Батарея</string>
+    <string name="shortcuts_icon_picker_browser">Браузер</string>
+    <string name="shortcuts_icon_picker_calendar">Календарь</string>
+    <string name="shortcuts_icon_picker_camera">Камера</string>
+    <string name="shortcuts_icon_picker_cloud">Облако</string>
+    <string name="shortcuts_icon_picker_contact">Контакт</string>
+    <string name="shortcuts_icon_picker_directdial">Прямой набор</string>
+    <string name="shortcuts_icon_picker_directmessage">Прямое сообщение</string>
+    <string name="shortcuts_icon_picker_drive">Диск</string>
+    <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
+    <string name="shortcuts_icon_picker_email">Email</string>
+    <string name="shortcuts_icon_picker_email2">Альтернативный Email</string>
+    <string name="shortcuts_icon_picker_evernote">Evernote</string>
+    <string name="shortcuts_icon_picker_facebook">Facebook</string>
+    <string name="shortcuts_icon_picker_favorite">Любимый</string>
+    <string name="shortcuts_icon_picker_file_browser">Файловый браузер</string>
+    <string name="shortcuts_icon_picker_file_browser2">Альтернативный файловый браузер</string>
+    <string name="shortcuts_icon_picker_fitness">Фитнес</string>
+    <string name="shortcuts_icon_picker_gallery">Галерея</string>
+    <string name="shortcuts_icon_picker_gears">Шестеренки</string>
+    <string name="shortcuts_icon_picker_google_small">Google</string>
+    <string name="shortcuts_icon_picker_gplus">Google Plus</string>
+    <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
+    <string name="shortcuts_icon_picker_help">Помощь</string>
+    <string name="shortcuts_icon_picker_joystick">Джойстик</string>
+    <string name="shortcuts_icon_picker_key">Ключи/Аккаунты</string>
+    <string name="shortcuts_icon_picker_laptop">Ноутбук</string>
+    <string name="shortcuts_icon_picker_notes">Заметки</string>
+    <string name="shortcuts_icon_picker_luggage">Путешествие</string>
+    <string name="shortcuts_icon_picker_maps">Карты</string>
+    <string name="shortcuts_icon_picker_market">Маркет</string>
+    <string name="shortcuts_icon_picker_movie">Фильмы</string>
+    <string name="shortcuts_icon_picker_music">Музыка</string>
+    <string name="shortcuts_icon_picker_nav">Навигация</string>
+    <string name="shortcuts_icon_picker_phone">Телефон</string>
+    <string name="shortcuts_icon_picker_package">Упаковка</string>
+    <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
+    <string name="shortcuts_icon_picker_play">Проигрывание</string>
+    <string name="shortcuts_icon_picker_pocket">Карман</string>
+    <string name="shortcuts_icon_picker_quicksettings">Быстрые настройки</string>
+    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
+    <string name="shortcuts_icon_picker_sdcard">SD-карта</string>
+    <string name="shortcuts_icon_picker_search">Поиск</string>
+    <string name="shortcuts_icon_picker_sms">Мессенджер</string>
+    <string name="shortcuts_icon_picker_tasks">Задачи</string>
+    <string name="shortcuts_icon_picker_terminal">Терминал</string>
+    <string name="shortcuts_icon_picker_transit">Транзит</string>
+    <string name="shortcuts_icon_picker_tv">ТВ</string>
+    <string name="shortcuts_icon_picker_twitter">Twitter</string>
+    <string name="shortcuts_icon_picker_unlock">Разблокировка</string>
+    <string name="empty_title">Пусто</string>
+    <string name="normal_title">Нормально</string>
+    <string name="hidden_title">Спрятано</string>
+    <string name="position_title">Позиция</string>
+    <string name="position_right_title">Справа</string>
+    <string name="position_centered_title">По центру</string>
+    <string name="help">Помощь</string>
+    <string name="reset_message">Сбросить все записи?</string>
+    <string name="profiles_add">Добавить</string>
+    <string name="profile_choose_app">Выбор приложения</string>
+    <string name="profile_reset_title">Сброс</string>
+    <string name="show_title">Показать</string>
+
     <!-- SlimSizer  -->
     <string name="listsystem">Список</string>
     <string name="sizer_title">Удаление приложений</string>
@@ -1207,4 +1323,5 @@
     <!-- Nightmode temperature settings-->
     <string name="nightmode_temp_title">Выбор цветовой температуры в ночном режиме</string>
 
+    <string name="lockscreen_enable_power_menu_title">Меню питания на экране блокировки</string>
 </resources>
