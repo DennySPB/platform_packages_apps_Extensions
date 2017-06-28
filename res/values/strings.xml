@@ -455,6 +455,8 @@
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
 
     <!-- Lockscreen clock fonts -->
+    <string name="lockdate_font_size_title">Date font size</string>
+    <string name="lockclock_font_size_title">Clock font size</string>
     <string name="lock_clock_font_title">Lockscreen clock font</string>
     <string name="lock_clock_font_summary">Change the default font of the lockscreen clock widget</string>
     <string name="lock_clock_font_normal">Roboto</string>
@@ -482,6 +484,8 @@
     <string name="lock_clock_font_notoserif_italic">NotoSerif Italic</string>
     <string name="lock_clock_font_notoserif_bold">NotoSerif Bold</string>
     <string name="lock_clock_font_notoserif_bold_italic">NotoSerif Bold Italic</string>
+    <string name="lockscreen_clock_date_color">Lockscreen date color</string>
+    <string name="lockscreen_clock_color">Lockscreen clock color</string>
 
     <!-- Lockscreen weather -->
     <string name="display_category_weather_title">Lockscreen weather options</string>

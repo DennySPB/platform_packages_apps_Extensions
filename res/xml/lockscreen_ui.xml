@@ -82,11 +82,44 @@
             android:title="@string/hide_lockscreen_alarm_title"
             android:defaultValue="true" />
 
+        <org.aospextended.extensions.preference.CustomSeekBarPreference
+                android:key="lockclock_font_size"
+                android:title="@string/lockclock_font_size_title"
+                settings:max="108"
+                settings:min="50"
+                settings:units="dp"
+                android:persistent="false"
+                android:defaultValue="78"
+                android:dependency="show_lockscreen_clock" />
+
+        <org.aospextended.extensions.preference.CustomSeekBarPreference
+                android:key="lockdate_font_size"
+                android:title="@string/lockdate_font_size_title"
+                settings:max="25"
+                settings:min="1"
+                settings:units="sp"
+                android:defaultValue="14"
+                android:persistent="false"
+                android:dependency="show_lockscreen_date" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_clock_color"
+        android:title="@string/lockscreen_clock_color"
+        android:defaultValue="0xffffffff"
+        android:dependency="show_lockscreen_clock" />
+
+    <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="lockscreen_clock_date_color"
+        android:title="@string/lockscreen_clock_date_color"
+        android:defaultValue="0xffffffff"
+        android:dependency="show_lockscreen_date" />
+
     <SwitchPreference
         android:key="lockscreen_battery_info"
         android:title="@string/lockscreen_battery_info_title"
         android:summary="@string/lockscreen_battery_info_summary"
-        android:persistent="false"/>
+        android:persistent="false" />
+
 
     </PreferenceCategory>
 

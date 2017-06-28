@@ -65,11 +65,17 @@ import com.android.settings.Utils;
 import com.android.internal.util.du.DuUtils;
 import android.hardware.fingerprint.FingerprintManager;
 import org.aospextended.extensions.preference.SystemSettingSwitchPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class LockscreenUI extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
 
     private static final String LOCK_CLOCK_FONTS = "lock_clock_fonts";
+    private static final String CLOCK_FONT_SIZE  = "lockclock_font_size";
+    private static final String DATE_FONT_SIZE  = "lockdate_font_size";
+    private static final String LOCKSCREEN_CLOCK_COLOR = "lockscreen_clock_color";
+    private static final String LOCKSCREEN_CLOCK_DATE_COLOR = "lockscreen_clock_date_color";
+
     private static final String LOCKSCREEN_CHARGING = "lockscreen_battery_info";
     private static final String PREF_HIDE_WEATHER =
             "weather_hide_panel";
@@ -85,6 +91,7 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
     private static final String DEFAULT_WEATHER_ICON_PACKAGE = "org.omnirom.omnijaws";
     private static final String CHRONUS_ICON_PACK_INTENT = "com.dvtonder.chronus.ICON_PACK";
     private static final String WEATHER_SERVICE_PACKAGE = "org.omnirom.omnijaws";
+    static final int DEFAULT = 0xffffffff;
 
     private ListPreference mLockClockFonts;
     private SwitchPreference mLockscreenCharging;
@@ -96,10 +103,20 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
     private SystemSettingSwitchPreference mFingerprintVibError;
     private FingerprintManager mFingerprintManager;
 
+    private CustomSeekBarPreference mClockFontSize;
+    private CustomSeekBarPreference mDateFontSize;
+    private ColorPickerPreference mLockscreenClockColorPicker;
+    private ColorPickerPreference mLockscreenClockDateColorPicker;
+
+
     private ContentResolver mResolver;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        int intColor;
+        String hexColor;
+
         super.onCreate(savedInstanceState);
         final PreferenceScreen prefScreen = getPreferenceScreen();
         ContentResolver resolver = getActivity().getContentResolver();
@@ -109,6 +126,33 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
         mResolver = getActivity().getContentResolver();
         PreferenceScreen prefs = getPreferenceScreen();
         Resources resources = getResources();
+
+        mClockFontSize = (CustomSeekBarPreference) findPreference(CLOCK_FONT_SIZE);
+        mClockFontSize.setValue(Settings.System.getInt(mResolver,
+                Settings.System.LOCKCLOCK_FONT_SIZE, 78));
+        mClockFontSize.setOnPreferenceChangeListener(this);
+
+        mDateFontSize = (CustomSeekBarPreference) findPreference(DATE_FONT_SIZE);
+        mDateFontSize.setValue(Settings.System.getInt(mResolver,
+                Settings.System.LOCKDATE_FONT_SIZE,14));
+        mDateFontSize.setOnPreferenceChangeListener(this);
+
+
+        mLockscreenClockColorPicker = (ColorPickerPreference) findPreference(LOCKSCREEN_CLOCK_COLOR);
+        mLockscreenClockColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_COLOR, DEFAULT);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mLockscreenClockColorPicker.setSummary(hexColor);
+        mLockscreenClockColorPicker.setNewPreviewColor(intColor);
+
+        mLockscreenClockDateColorPicker = (ColorPickerPreference) findPreference(LOCKSCREEN_CLOCK_DATE_COLOR);
+        mLockscreenClockDateColorPicker.setOnPreferenceChangeListener(this);
+        intColor = Settings.System.getInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_DATE_COLOR, DEFAULT);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mLockscreenClockDateColorPicker.setSummary(hexColor);
+        mLockscreenClockDateColorPicker.setNewPreviewColor(intColor);
 
         PreferenceCategory fingerprintCategory = (PreferenceCategory) findPreference(FP_CAT);
 
@@ -204,6 +248,33 @@ public class LockscreenUI extends SettingsPreferenceFragment implements OnPrefer
             mLockClockFonts.setValue(String.valueOf(newValue));
             mLockClockFonts.setSummary(mLockClockFonts.getEntry());
             return true;
+        } else if (preference == mClockFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKCLOCK_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mDateFontSize) {
+            int top = (Integer) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKDATE_FONT_SIZE, top*1);
+            return true;
+        } else if (preference == mLockscreenClockColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_COLOR, intHex);
+            return true;
+        } else if (preference == mLockscreenClockDateColorPicker) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.LOCKSCREEN_CLOCK_DATE_COLOR, intHex);
+            return true;
+
         } else if (preference == mHideWeather) {
             int intValue = Integer.valueOf((String) newValue);
             int index = mHideWeather.findIndexOfValue((String) newValue);
