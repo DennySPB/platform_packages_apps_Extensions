@@ -1324,4 +1324,8 @@
     <string name="nightmode_temp_title">Выбор цветовой температуры в ночном режиме</string>
 
     <string name="lockscreen_enable_power_menu_title">Меню питания на экране блокировки</string>
+
+    <!-- Haptic on action-->
+    <string name="haptic_on_action_title">Вибрация при действии</string>
+
 </resources>
