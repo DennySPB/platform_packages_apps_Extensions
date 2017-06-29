@@ -1049,5 +1049,20 @@
         <item>2500</item>
         <item>3000</item>
     </string-array>
+
+    <!-- Screen state mobile data entries-->
+    <string-array name="screen_state_toggles_twog_entries" translatable="false">
+        <item>@string/show_carrier_disabled</item>
+        <item>2G</item>
+        <item>3G</item>
+    </string-array>
+
+    <!-- Screen state mobile data values-->
+    <string-array name="screen_state_toggles_twog_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
 

@@ -25,6 +25,7 @@ import android.support.v7.preference.PreferenceCategory;
 import android.support.v7.preference.PreferenceScreen;
 import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v14.preference.SwitchPreference;
+import android.support.v7.preference.ListPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.View;
@@ -59,13 +60,14 @@ public class ScreenStateToggles extends SettingsPreferenceFragment implements Pr
     private Context mContext;
 
     private SwitchPreference mEnableScreenStateToggles;
-    private SwitchPreference mEnableScreenStateTogglesTwoG;
+//    private SwitchPreference mEnableScreenStateTogglesTwoG;
     private SwitchPreference mEnableScreenStateTogglesGps;
     private SwitchPreference mEnableScreenStateTogglesMobileData;
     private CustomSeekBarPreference mSecondsOffDelay;
     private CustomSeekBarPreference mSecondsOnDelay;
     private PreferenceCategory mMobileDateCategory;
     private PreferenceCategory mLocationCategory;
+    private ListPreference mEnableScreenStateTogglesTwoG;
 
     @Override
     protected int getMetricsCategory() {
@@ -106,7 +108,7 @@ public class ScreenStateToggles extends SettingsPreferenceFragment implements Pr
         mLocationCategory = (PreferenceCategory) findPreference(
                 SCREEN_STATE_CATGEGORY_LOCATION);
 
-        mEnableScreenStateTogglesTwoG = (SwitchPreference) findPreference(
+        mEnableScreenStateTogglesTwoG = (ListPreference) findPreference(
                 SCREEN_STATE_TOOGLES_TWOG);
 
         ConnectivityManager cm = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -114,9 +116,13 @@ public class ScreenStateToggles extends SettingsPreferenceFragment implements Pr
         if (!cm.isNetworkSupported(ConnectivityManager.TYPE_MOBILE)){
             getPreferenceScreen().removePreference(mEnableScreenStateTogglesTwoG);
         } else {
-            mEnableScreenStateTogglesTwoG.setChecked((
-                Settings.System.getInt(getActivity().getContentResolver(), Settings.System.SCREEN_STATE_TWOG, 0) == 1));
-            mEnableScreenStateTogglesTwoG.setOnPreferenceChangeListener(this);
+        mEnableScreenStateTogglesTwoG.setValue(String.valueOf(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SCREEN_STATE_TWOG, 0)));
+        mEnableScreenStateTogglesTwoG.setSummary(mEnableScreenStateTogglesTwoG.getEntry());
+        mEnableScreenStateTogglesTwoG.setOnPreferenceChangeListener(this);
+//            mEnableScreenStateTogglesTwoG.setChecked((
+//                Settings.System.getInt(getActivity().getContentResolver(), Settings.System.SCREEN_STATE_TWOG, 0) == 1));
+//            mEnableScreenStateTogglesTwoG.setOnPreferenceChangeListener(this);
         }
 
         mEnableScreenStateTogglesMobileData = (SwitchPreference) findPreference(
@@ -175,10 +181,14 @@ public class ScreenStateToggles extends SettingsPreferenceFragment implements Pr
 
             return true;
         } else if (preference == mEnableScreenStateTogglesTwoG) {
-            boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver,
-                    Settings.System.SCREEN_STATE_TWOG, value ? 1 : 0);
-
+                    Settings.System.SCREEN_STATE_TWOG,
+                    Integer.valueOf(String.valueOf(newValue)));
+            mEnableScreenStateTogglesTwoG.setValue(String.valueOf(newValue));
+            mEnableScreenStateTogglesTwoG.setSummary(mEnableScreenStateTogglesTwoG.getEntry());
+//            boolean value = (Boolean) newValue;
+//            Settings.System.putInt(resolver,
+//                    Settings.System.SCREEN_STATE_TWOG, value ? 1 : 0);
             Intent intent = new Intent("android.intent.action.SCREEN_STATE_SERVICE_UPDATE");
             mContext.sendBroadcast(intent);
 

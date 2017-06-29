@@ -46,12 +46,20 @@
         android:key="screen_state_toggles_mobile_key"
         android:title="@string/screen_state_toggles_mobile_title">
 
-       <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+        <ListPreference
+            android:entries="@array/screen_state_toggles_twog_entries"
+            android:entryValues="@array/screen_state_toggles_twog_values"
+            android:key="screen_state_toggles_twog"
+            android:title="@string/screen_state_toggles_twog"
+            android:summary="@string/screen_state_toggles_twog_summary" />
+
+
+<!--       <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="screen_state_toggles_twog"
             android:title="@string/screen_state_toggles_twog"
             android:summary="@string/screen_state_toggles_twog_summary"
             android:defaultValue="false"/>
-
+-->
        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="screen_state_toggles_mobile_data"
             android:title="@string/screen_state_toggles_mobile_data"
