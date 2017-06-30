@@ -62,6 +62,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     public static final String VOLUME_ROCKER_MUSIC_CONTROLS = "volume_rocker_music_controls";
     private static final String KEY_VOLUME_KEY_CURSOR_CONTROL = "volume_key_cursor_control";
     private static final String KEY_HOME_WAKE_SCREEN = "home_wake_screen";
+    private static final String HWKEY_BACK_APPS_DISABLE = "hardware_keys_back_apps_key";
 
     // category keys
     private static final String CATEGORY_HWKEY = "hardware_keys";
@@ -84,6 +85,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private SwitchPreference mVolumeRockerMusicControl;
     private SwitchPreference mHwKeyWakeDisable;
     private SwitchPreference mHwKeyDisable;
+    private SwitchPreference mHwKeyBackAppDisable;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
     private ListPreference mVolumeKeyCursorControl;
@@ -118,6 +120,15 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         } else {
             prefScreen.removePreference(hwkeyCat);
         }
+	boolean keysBackAppsDisabled = false;
+
+	mHwKeyBackAppDisable = (SwitchPreference) findPreference(HWKEY_BACK_APPS_DISABLE);
+            keysBackAppsDisabled = (Settings.Secure.getIntForUser(getContentResolver(),
+                    Settings.Secure.HARDWARE_KEYS_BACK_APPS_KEY, 0,
+                    UserHandle.USER_CURRENT) == 1);
+            mHwKeyBackAppDisable.setChecked(keysBackAppsDisabled);
+            mHwKeyBackAppDisable.setOnPreferenceChangeListener(this);
+
 
         // bits for hardware keys present on device
         final int deviceKeys = getResources().getInteger(
@@ -149,7 +160,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
         mHandler = new Handler();
         // back key
-        if (!hasBackKey) {
+        if (!hasBackKey || keysBackAppsDisabled) {
             prefScreen.removePreference(backCategory);
         }
 
@@ -164,7 +175,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 	}
 
         // App switch key (recents)
-        if (!hasAppSwitchKey) {
+        if (!hasAppSwitchKey || keysBackAppsDisabled) {
             prefScreen.removePreference(appSwitchCategory);
         }
 
@@ -279,6 +290,12 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         } else if (preference == mHwKeyDisable) {
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_DISABLE,
+                    value ? 1 : 0);
+            setActionPreferencesEnabled(!value);
+            return true;
+        } else if (preference == mHwKeyBackAppDisable) {
+            boolean value = (Boolean) objValue;
+            Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_BACK_APPS_KEY,
                     value ? 1 : 0);
             setActionPreferencesEnabled(!value);
             return true;

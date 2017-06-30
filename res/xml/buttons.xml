@@ -16,9 +16,11 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/buttons_title">
 
+
     <org.aospextended.extensions.preference.SystemSettingSwitchPreference
-        android:key="haptic_on_action_key"
+        android:key="_on_action_key"
         android:title="@string/haptic_on_action_title"
+        android:summary="@string/haptic_on_action_summary"
         android:defaultValue="false" />
 
    <PreferenceCategory
@@ -81,9 +83,17 @@
         android:key="hardware_keys"
         android:title="@string/hardware_keys_category" >
 
+
      <SwitchPreference
          android:key="hardware_keys_disable"
         android:title="@string/hardware_keys_disable_title" />
+
+    <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+        android:key="hardware_keys_back_apps_key"
+        android:title="@string/hardware_keys_back_apps_title"
+        android:summary="@string/hardware_keys_back_apps_summary"
+        android:defaultValue="false"
+	android:dependency="hardware_keys_disable" />
 
     <org.aospextended.extensions.preference.CustomSeekBarPreference
         android:key="button_brightness"
