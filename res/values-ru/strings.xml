@@ -742,8 +742,8 @@
     <string name="text_charging_symbol_default">Отключено</string>
     <string name="text_charging_symbol_flash">Моргать</string>
     <string name="text_charging_symbol_tilde">Тильда</string>
-    <string name="status_bar_pulse_charging_battery_title">Пульсация значка батареи при зарядке</string>
-    <string name="status_bar_pulse_charging_battery_summary">Значек батареи в строке состояния будет пульсировать при зарядке</string>
+    <string name="status_bar_pulse_charging_battery_title">Пульсация значка батареи</string>
+    <string name="status_bar_pulse_charging_battery_summary">Значек батареи в строке состояния будет пульсировать при изменении процентов заряда</string>
 
     <!-- StatusBar weather settings -->
     <string name="statusbar_weather_title">Погода в статусбаре</string>

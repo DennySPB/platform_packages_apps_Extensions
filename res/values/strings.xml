@@ -715,8 +715,8 @@
     <string name="text_charging_symbol_default">Disabled</string>
     <string name="text_charging_symbol_flash">Flash</string>
     <string name="text_charging_symbol_tilde">Tilde</string>
-    <string name="status_bar_pulse_charging_battery_title">Pulse battery icon when charging</string>
-    <string name="status_bar_pulse_charging_battery_summary_on">All battery styles will show pulsing animation</string>
+    <string name="status_bar_pulse_charging_battery_title">Pulse battery icon on percentage change</string>
+    <string name="status_bar_pulse_charging_battery_summary_on">All battery styles will show pulsing animation on change</string>
 
     <!-- Recents panel settings -->
     <string name="show_clear_all_recents_button_title">Clear all button</string>
