@@ -160,7 +160,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
         mHandler = new Handler();
         // back key
-        if (!hasBackKey || keysBackAppsDisabled) {
+        if (!hasBackKey) {
             prefScreen.removePreference(backCategory);
         }
 
@@ -175,7 +175,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 	}
 
         // App switch key (recents)
-        if (!hasAppSwitchKey || keysBackAppsDisabled) {
+        if (!hasAppSwitchKey) {
             prefScreen.removePreference(appSwitchCategory);
         }
 
@@ -191,7 +191,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         
 
         // Backlight
-        if (hasMenuKey || hasHomeKey) {
+        if (hasMenuKey) {
             if (mBacklightTimeout != null) {
         	mBacklightTimeout.setOnPreferenceChangeListener(this);
 	        int BacklightTimeout = Settings.System.getInt(getContentResolver(),
@@ -297,7 +297,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             boolean value = (Boolean) objValue;
             Settings.Secure.putInt(getContentResolver(), Settings.Secure.HARDWARE_KEYS_BACK_APPS_KEY,
                     value ? 1 : 0);
-            setActionPreferencesEnabled(!value);
+//            setActionPreferencesEnabled(!value);
             return true;
         } else if (preference == mBacklightTimeout) {
             String BacklightTimeout = (String) objValue;
