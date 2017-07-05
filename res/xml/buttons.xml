@@ -18,7 +18,7 @@
 
 
     <org.aospextended.extensions.preference.SystemSettingSwitchPreference
-        android:key="_on_action_key"
+        android:key="haptic_on_action_key"
         android:title="@string/haptic_on_action_title"
         android:summary="@string/haptic_on_action_summary"
         android:defaultValue="false" />
