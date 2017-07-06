@@ -213,6 +213,9 @@
 	<string name="clock_date_style_lowercase">нижний регистр</string>
 	<string name="clock_date_style_uppercase">ВЕРХНИЙ РЕГИСТР</string>
 	<string name="clock_date_format_custom">Настраиваемый java формат</string>
+        <string name="clock_font_style_title">Шрифт</string>
+	<string name="clock_font_size_title">Размер шрифта</string>
+
 	<string name="cancel">Отмена</string>
 	<string name="save">Сохранить</string>
 	<!-- Color Picker -->
@@ -799,6 +802,15 @@
 	<string name="pref_scrollingcache_default_enable">Включить по умолчанию</string>
 	<string name="pref_scrollingcache_default_disable">Отключить по умолчанию</string>
 	<string name="pref_scrollingcache_force_disable">Отключить принудительно</string>
+	<!-- Alarm blocker -->
+	<string name="alarm_blocker">Блокировщик будящих процессов</string>
+	<string name="alarm_blocker_title">Включить</string>
+	<string name="alarm_blocker_summary">Заблокировать будящие процессы при выключенном экране</string>
+	<string name="alarm_blocker_save">Сохранить</string>
+	<string name="alarm_list_header">Доступные процессы</string>
+	<string name="alarm_blocker_reload">Перезагрузить</string>
+	<string name="alarm_blocker_warning_title">Продолжайте с осторожностью</string>
+	<string name="alarm_blocker_warning">Блокировка будящих процессов может вызвать нестабильность приложений, принудительные закрытия или потерю данных.</string>
 	<!-- Three finger swipe screenshot -->
 	<string name="three_finger_gesture">Жест тремя пальцами</string>
 	<string name="three_finger_gesture_summary">Проведите тремя пальцами для создания скриншота</string>

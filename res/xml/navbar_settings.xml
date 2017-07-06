@@ -74,6 +74,7 @@
                 settings:max="135"
                 settings:min="65"
                 settings:units="%" />
+
         <PreferenceScreen
             android:key="pulse_settings"
             android:title="@string/pulse_settings"
