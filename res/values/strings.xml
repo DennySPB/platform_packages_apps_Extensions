@@ -1347,5 +1347,13 @@
     <string name="hardware_keys_back_apps_title">Disable hardware back/recents</string>
     <string name="hardware_keys_back_apps_summary">Disable hardware Back and Recents</string>
 
+    <!-- Backlight button touch-->
+    <string name="button_backlight_on_touch_only_title">Button touch</string>
+    <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
+
+    <!-- Data disabled icon -->
+    <string name="data_disabled_icon_title">Show data disabled icon</string>
+    <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
+
 </resources>
 
