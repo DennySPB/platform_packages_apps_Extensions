@@ -1189,6 +1189,10 @@
 	<string name="haptic_on_action_summary">Вибрация при использовании сенсорных кнопок будет происходить по действию, а не при прикосновении</string>
 	<string name="hardware_keys_back_apps_title">Отключить Назад/Обзор</string>
 	<string name="hardware_keys_back_apps_summary">Кнопки Назад и Обзор будут отключены</string>
+        <!-- Backlight button touch-->
+        <string name="button_backlight_on_touch_only_title">Сенсорные кнопки</string>
+	<string name="button_backlight_on_touch_only_summary">Включить подсветку кнопок только по касанию</string>
+
         <!-- Data disabled icon -->
 	<string name="data_disabled_icon_title">Показывать значок отключенной передачи данных</string>
         <string name="data_disabled_icon_summary">Показывать крестик в значке уровня сети при отключенной передачи данных</string>
