@@ -151,15 +151,6 @@
     <string name="flashlight_notification_title">Flashlight notification</string>
     <string name="flashlight_notification_summary">Enable notification for when the flashlight is on</string>
 
-    <!-- Immersive Recents -->
-    <string name="immersive_recents_title">Immersive recents</string>
-    <string name="immersive_recents_summary">Change the view of the recents screen</string>
-    <string name="immersive_recents_dialog_title">Select recents view</string>
-    <string name="immersive_recents_default">Default</string>
-    <string name="immersive_recents_fullscreen">Fullscreen</string>
-    <string name="immersive_recents_statusbar">Statusbar only</string>
-    <string name="immersive_recents_navbar">Navbar only</string>
-
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_style_title">Tiles animation style</string>
     <string name="qs_tile_animation_duration_title">Tiles animation duration</string>
@@ -425,6 +416,11 @@
     <string name="smartbar_config_backup_error_toast">Error saving SmartBar profile</string>
     <string name="smartbar_config_restore_error_toast">Error restoring SmartBar profile</string>
     <string name="navbar_buttons_alpha_title">Button transparency</string>
+    <string name="smartbar_longpress_delay_title">Button longpress delay</string>
+    <string name="smartbar_longpress_delay_summary">Set how long the system will wait before triggering a longpress action</string>
+    <string name="smartbar_longpress_delay_default">Default delay (fast)</string>
+    <string name="smartbar_longpress_delay_normal">Normal delay</string>
+    <string name="smartbar_longpress_delay_long">Long delay</string>
 
     <!-- QuickSettings haptic feedback -->
     <string name="quick_settings_vibrate_title">Vibrate on touch</string>
@@ -739,7 +735,7 @@
     <string name="hide_from_recents_add_app">Add app</string>
     <string name="hide_apps_from_recents_summary">Pick which apps to exclude from the recents panel</string>
 
-    <!-- fingerprint authentication vibration -->
+    <!-- Fingerprint authentication vibration -->
     <string name="fprint_sucess_vib_title">Fingerprint authentication vibration</string>
     <string name="fprint_sucess_vib_summary">Vibrate on successful fingerprint authentication</string>
     <string name="fprint_error_vib_title">Fingerprint error vibration</string>
@@ -998,7 +994,7 @@
 
     <!-- Slim Recent panel -->
     <string name="slim_recents_title">Slim recents</string>
-    <string name="use_slim_recents_title">Use for a recents alterative</string>
+    <string name="use_slim_recents_title">Use for a recents alternative</string>
     <string name="use_slim_recents_summary">Use slim recents instead of the default recents view</string>
     <string name="slim_recents_settings_title">Slim recents settings</string>
     <string name="slim_recents_settings_summary">View the settings for slim recents</string>
@@ -1193,24 +1189,16 @@
     <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
 
     <!-- SlimSizer  -->
-    <string name="listsystem">list</string>
-    <string name="sizer_title">App remover</string>
     <string name="caution">Caution!</string>
     <string name="sizer_message_startup">This tool allows you to delete system apps. Use with caution and only delete apps you know are safe to be removed.</string>
-    <string name="cancel">Cancel</string>
-    <string name="sizer_message_delete">Are you sure you want to delete this app?</string>
+    <string name="sizer_message_delete">Are you sure ?</string>
     <string name="btn_delete">Delete selected apps now</string>
     <string name="delete_progress_title">Deleting</string>
     <string name="delete_progress">Selected files are being deleted...</string>
-    <string name="delete_success">Deleted</string>
-    <string name="delete_fail">Unable to delete</string>
-    <string name="btn_profile">Profile</string>
-    <string name="sizer_message_sdnowrite">Cannot write to SD Card.</string>
-    <string name="sizer_message_sdnoread">Cannot read SD Card.</string>
-    <string name="sizer_message_filesuccess">Created profile.</string>
-    <string name="sizer_message_filefail">Failed to create profile.</string>
     <string name="sizer_message_noselect">Nothing selected.</string>
     <string name="system_app_remover">System app remover</string>
+    <string name="sizer_message_error">Failed to uninstall, check root access</string>
+    <string name="sizer_message_success">Success</string>
 
    <!-- Grid recents screen pinning toggle -->
     <string name="grid_recents_pinning_title">Show screen pinning icon in grid style recents</string>
@@ -1346,6 +1334,14 @@
 
     <string name="hardware_keys_back_apps_title">Disable hardware back/recents</string>
     <string name="hardware_keys_back_apps_summary">Disable hardware Back and Recents</string>
+
+    <!-- Backlight button touch-->
+    <string name="button_backlight_on_touch_only_title">Button touch</string>
+    <string name="button_backlight_on_touch_only_summary">Enable backlight with timeout only on button touch</string>
+
+    <!-- Data disabled icon -->
+    <string name="data_disabled_icon_title">Show data disabled icon</string>
+    <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
 
     <!-- Backlight button touch-->
     <string name="button_backlight_on_touch_only_title">Button touch</string>

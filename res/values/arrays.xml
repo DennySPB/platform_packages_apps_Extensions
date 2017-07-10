@@ -86,21 +86,6 @@
         <item>2</item>
     </string-array>
 
-    <!-- Immersive Recents -->
-    <string-array name="immersive_recents_entries">
-        <item>@string/immersive_recents_default</item>
-        <item>@string/immersive_recents_fullscreen</item>
-        <item>@string/immersive_recents_statusbar</item>
-        <item>@string/immersive_recents_navbar</item>
-    </string-array>
-
-    <string-array name="immersive_recents_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
    <!-- Tiles animation style -->
     <string-array name="qs_tile_animation_style_entries" translatable="false">
         <item>@string/qs_tile_animation_style_off</item>
@@ -1016,6 +1001,7 @@
         <item>5</item>
     </string-array>
 
+<<<<<<< HEAD
     <!-- Proximity speaker delay entries. -->
     <string-array name="proximity_delay_entries" translatable="false">
         <item>100</item>
@@ -1047,6 +1033,19 @@
 
     <!-- Screen state mobile data values-->
     <string-array name="screen_state_toggles_twog_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
+
+    <string-array name="smartbar_longpress_delay_entries">
+        <item>@string/smartbar_longpress_delay_default</item>
+        <item>@string/smartbar_longpress_delay_normal</item>
+        <item>@string/smartbar_longpress_delay_long</item>
+    </string-array>
+
+    <string-array name="smartbar_longpress_delay_values" translatable="false">
         <item>0</item>
         <item>1</item>
         <item>2</item>
