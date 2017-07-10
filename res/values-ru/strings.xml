@@ -93,7 +93,7 @@
 	<!-- Quick Settings -->
 	<string name="quick_settings_title">Быстрые настройки</string>
 	<string name="status_bar_quick_qs_pulldown_title">Быстрый доступ</string>
-	<string name="status_bar_quick_qs_pulldown_summary">%1$s край строки состояния при опускании вниз открывает панель быстрых настроек</string>
+	<string name="status_bar_quick_qs_pulldown_summary">Правый край строки состояния при опускании вниз открывает панель быстрых настроек</string>
 	<!-- Misc Extensions -->
 	<string name="misc_extensions_title">Прочие настройки</string>
 	<!-- General Tweaks -->
@@ -477,6 +477,13 @@
 	<!-- CM Lockscreen shortcuts -->
 	<string name="lockscreen_targets_summary">Настроить нижние левый и правый ярлыки на экране блокировки по своему усмотрению</string>
 	<string name="lockscreen_targets_message">Ярлыки в нижних углах</string>
+	<!-- Lockscreen Shortcuts -->
+        <string name="lockscreen_shortcuts">Ярлыки на экране блокировки</string>
+        <string name="lockscreen_shortcuts_title">Ярлыки в центре экрана</string>
+        <string name="lockscreen_shortcuts_summary">Добавить ярлыки в центр экрана на локскрин</string>
+        <string name="lockscreen_shorcuts_longpress_title">Длительное нажатие на ярлык</string>
+        <string name="lockscreen_shorcuts_longpress_summary">Открыть пользовательские ярлыки при длительном нажатии</string>
+        <string name="lockscreen_shortcuts_category">Ярлыки</string>
 	<!-- Double tap gesture anywhere on the lock screen put device to sleep -->
 	<string name="double_tap_sleep_anywhere_title">Нажмите на экран блокировки для сна</string>
 	<string name="double_tap_sleep_anywhere_summary">Дважды нажмите в любом месте на экране блокировки, чтобы перевести устройство в спящий режим</string>
@@ -513,9 +520,13 @@
 	<!-- Disable QS on secure Lockscreen -->
 	<string name="lockscreen_qs_disabled_title">Отключить быстрые настройки при защите</string>
 	<string name="lockscreen_qs_disabled_summary">Отключить меню быстрых настроек при настройке защиты на экране блокировки</string>
+	<!-- Wired headset ringtone audio focus -->
+	<string name="wired_ringtone_focus_mode_title">Играть мелодию вызова через</string>
+	<string name="wired_ringtone_focus_mode_dynamic">Наушники, если они подключены и включена музыка</string>
+	<string name="wired_ringtone_focus_mode_stock">Динамик и наушники (по умолчанию)</string>
 	<!-- Status Bar Ticker -->
 	<string name="ticker_screen_title">Текст уведомлений</string>
-	<string name="ticker_title">Старый вид уведомлений в строке состояния</string>
+	<string name="ticker_title">Бегущая строка в строке состояния</string>
 	<string name="ticker_screen_summary">Настроить стиль бегущих уведомлений в строке состояния</string>
 	<string name="ticker_summary">Включить отображение уведомлений в строке состояния как в старых версиях Android</string>
 	<string name="ticker_font_style_title">Стиль шрифта</string>
