@@ -1001,7 +1001,6 @@
         <item>5</item>
     </string-array>
 
-<<<<<<< HEAD
     <!-- Proximity speaker delay entries. -->
     <string-array name="proximity_delay_entries" translatable="false">
         <item>100</item>
