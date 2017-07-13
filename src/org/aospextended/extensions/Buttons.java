@@ -167,12 +167,13 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         // home key
         if (!hasHomeKey) {
             prefScreen.removePreference(homeCategory);
-        } else if (hasHomeKey) {
+            Settings.System.putInt(getActivity().getContentResolver(),Settings.System.HOME_WAKE_SCREEN, 0);
+	} else if (hasHomeKey) {
  		    mHwKeyWakeDisable = (SwitchPreference) findPreference(KEY_HOME_WAKE_SCREEN);
-            if (!res.getBoolean(R.bool.config_show_homeWake)) {
-            prefScreen.removePreference(mHwKeyWakeDisable);
+             if (!res.getBoolean(R.bool.config_show_homeWake)) {
+             prefScreen.removePreference(mHwKeyWakeDisable);
+            }
         }
-	}
 
         // App switch key (recents)
         if (!hasAppSwitchKey) {

@@ -148,13 +148,6 @@
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
 
-<!--        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
-            android:key="allow_incall_home"
-            android:title="@string/allow_incall_home_title"
-            android:summary="@string/allow_incall_home_summary"
-            android:defaultValue="true" 
-	    android:disableDependentsState="false" />/>
--->
         <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="home_wake_screen"
             android:title="@string/button_wake_title"
