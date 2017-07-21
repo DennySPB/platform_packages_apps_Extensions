@@ -205,8 +205,12 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                 mButtonBrightness.setValue(ButtonBrightness / 1);
                 mButtonBrightness.setOnPreferenceChangeListener(this);
         } else {
+		if(mBacklightTimeout != null) {
             prefScreen.removePreference(mBacklightTimeout);
+		}
+		if(mButtonBrightness != null) {
             prefScreen.removePreference(mButtonBrightness);
+		}
         }
 
         mSwapVolumeButtons = (SwitchPreference) findPreference(SWAP_VOLUME_BUTTONS);
