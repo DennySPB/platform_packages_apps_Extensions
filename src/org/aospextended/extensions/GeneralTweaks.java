@@ -55,13 +55,17 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
     public static final String NIGHTMODE_COLOR_TEMP = "nightmode_color_temp";
     private static final String SCREENSHOT_TYPE = "screenshot_type";
     private static final String SCREENSHOT_DELAY = "screenshot_delay";
+
     private static final String VOLUME_DIALOG_TIMEOUT  = "volume_dialog_timeout";
+    private static final String TRANSPARENT_VOLUME_DIALOG  = "transparent_volume_dialog";
 
     private static final String WIRED_RINGTONE_FOCUS_MODE = "wired_ringtone_focus_mode";
     private static final String HEADSET_CONNECT_PLAYER = "headset_connect_player";
 
     private CustomSeekBarPreference mScreenshotDelay;
     private CustomSeekBarPreference mVolumeDialogTimeout;
+    private CustomSeekBarPreference mVolumeDialogAlpha;
+
     private CustomSeekBarPreference mNightModeColorTemp;
     private ListPreference mMsob;
     private ListPreference mScreenshotType;
@@ -89,6 +93,12 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
                 Settings.System.VOLUME_DIALOG_TIMEOUT, 3000);
         mVolumeDialogTimeout.setValue(VolumeTimeout / 1);
         mVolumeDialogTimeout.setOnPreferenceChangeListener(this);
+
+        mVolumeDialogAlpha = (CustomSeekBarPreference) findPreference(TRANSPARENT_VOLUME_DIALOG);
+        int VolumeAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.TRANSPARENT_VOLUME_DIALOG, 255);
+        mVolumeDialogAlpha.setValue(VolumeAlpha / 1);
+        mVolumeDialogAlpha.setOnPreferenceChangeListener(this);
 
         mMsob = (ListPreference) findPreference(PREF_MEDIA_SCANNER_ON_BOOT);
         mMsob.setValue(String.valueOf(Settings.System.getInt(resolver,
@@ -153,6 +163,11 @@ public class GeneralTweaks extends SettingsPreferenceFragment implements OnPrefe
 	    int valueVolumeTimeout = (Integer) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.VOLUME_DIALOG_TIMEOUT, valueVolumeTimeout * 1);
+            return true;
+	} else if (preference == mVolumeDialogAlpha) {
+	    int valueVolumeAlpha = (Integer) newValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.TRANSPARENT_VOLUME_DIALOG, valueVolumeAlpha * 1);
             return true;
 	}else if  (preference == mScreenshotType) {
             int mScreenshotTypeValue = Integer.parseInt(((String) newValue).toString());

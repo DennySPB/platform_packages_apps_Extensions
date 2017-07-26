@@ -1227,8 +1227,9 @@
         <!-- Data disabled icon -->
 	<string name="data_disabled_icon_title">Показывать значок отключенной передачи данных</string>
         <string name="data_disabled_icon_summary">Показывать крестик в значке уровня сети при отключенной передачи данных</string>
-	<string name="volume_timeout_title">Время ожидания панели громкости</string>
 
+	<string name="volume_timeout_title">Время ожидания панели громкости</string>
+        <string name="transparent_volume_dialog_title">Прозрачность панели громкости</string>
         <string name="mtp_enabled_title">Включить MTP по умолчанию</string>
         <string name="mtp_enabled_summary">MTP будет включён по умолчанию</string>
 
