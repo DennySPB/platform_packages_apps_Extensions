@@ -58,6 +58,12 @@
         android:title="@string/incall_home_category">
 
         <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="incall_menu_disable"
+            android:title="@string/menu_disable_title"
+            android:summary="@string/menu_disable_summary"
+            android:defaultValue="true" />
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="allow_incall_home"
             android:title="@string/allow_incall_home_title"
             android:summary="@string/allow_incall_home_summary"
@@ -106,17 +112,26 @@
 -->
     </PreferenceCategory>
 
-<!--    <PreferenceCategory
-	android:key="incall_record_category"
-        android:title="@string/incall_record_category">
+    <PreferenceCategory
+	android:key="incall_background_category"
+        android:title="@string/incall_bg_category">
 
-        <SwitchPreference
-            android:key="call_recording_automatically_key"
-            android:title="@string/call_recording_title"
-            android:summary="@string/call_recording_summary"
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="incall_bg_key"
+            android:title="@string/incall_bg_title"
+            android:summary="@string/incall_bg_summary"
             android:defaultValue="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="incall_bg_primary"
+            android:title="@string/incall_bg_primary_title"
+            android:defaultValue="0xff444444"
+            android:dependency="incall_bg_key" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="incall_bg_secondary"
+            android:title="@string/incall_bg_secondary_title"
+            android:defaultValue="0xff33b5e5"
+            android:dependency="incall_bg_key" />
     </PreferenceCategory>
--->
-
-
 </PreferenceScreen>

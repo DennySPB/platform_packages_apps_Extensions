@@ -34,12 +34,27 @@
         android:key="general_tweaks_general_category"
         android:title="@string/general_category">
 
+    <org.aospextended.extensions.preference.CustomSeekBarPreference
+        android:key="volume_dialog_timeout"
+        android:title="@string/volume_timeout_title"
+        settings:max="10000"
+        settings:min="1000"
+        settings:units="ms"
+        settings:interval="500"
+        android:persistent="false"/>
+
         <ListPreference
             android:key="media_scanner_on_boot"
             android:title="@string/media_scanner_on_boot_title"
             android:entries="@array/media_scanner_on_boot_entries"
             android:entryValues="@array/media_scanner_on_boot_values"
             android:persistent="false" />
+
+        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+            android:key="mtp_dirty_hack"
+            android:title="@string/mtp_enabled_title"
+            android:summary="@string/mtp_enabled_summary"
+            android:defaultValue="false" />
 
         <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="disable_fc_notifications"
@@ -65,6 +80,7 @@
         <PreferenceCategory
             android:key="screenshot_options"
             android:title="@string/screenshot_options_category" >
+
 
         <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="three_finger_gesture"

@@ -27,11 +27,13 @@ import android.support.v7.preference.Preference.OnPreferenceChangeListener;
 import android.support.v7.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.view.Gravity;
+import android.graphics.Color;
 import com.android.settings.R;
 import com.android.internal.logging.MetricsProto.MetricsEvent;
 import com.android.settings.SettingsPreferenceFragment;
 
 import org.aospextended.extensions.preference.CustomSeekBarPreference;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class InCallSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -48,6 +50,9 @@ public class InCallSettings extends SettingsPreferenceFragment implements
 
     public static final String BUTTON_SMART_MUTE_KEY = "button_smart_mute";
 
+    private static final String INCALL_BG_PRIMARY  = "incall_bg_primary";
+    private static final String INCALL_BG_SECONDARY  = "incall_bg_secondary";
+
     private SwitchPreference mVibrateOnConnect;
     private SwitchPreference mVibrateOnDisconnect;
 
@@ -59,6 +64,17 @@ public class InCallSettings extends SettingsPreferenceFragment implements
     private ListPreference mProxSpeakerDelay;
     private SwitchPreference mProxSpeakerIncallOnly;
 
+    //Colors
+    private ColorPickerPreference mPrimaryColor;
+    private ColorPickerPreference mSecondaryColor;
+
+    public static int PRIMARY_DEFAULT = Color.parseColor("#FF444444");
+    public static int SECONDARY_DEFAULT = Color.parseColor("#FF33B5E5");
+
+    int intPrimColor;
+    int intSecColor;
+    String hexPrimColor;
+    String hexSecColor;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -107,6 +123,21 @@ public class InCallSettings extends SettingsPreferenceFragment implements
                 Settings.System.PROXIMITY_AUTO_SPEAKER_INCALL_ONLY, 0) == 1);
         mProxSpeakerIncallOnly.setOnPreferenceChangeListener(this);
 
+        mPrimaryColor = (ColorPickerPreference) findPreference(INCALL_BG_PRIMARY);
+        mPrimaryColor.setOnPreferenceChangeListener(this);
+        intPrimColor = Settings.System.getInt(getContentResolver(), Settings.System.INCALL_BG_PRIMARY, PRIMARY_DEFAULT);
+        hexPrimColor = String.format("#%08x", (0xffffffff & intPrimColor));
+        mPrimaryColor.setSummary(hexPrimColor);
+        mPrimaryColor.setNewPreviewColor(intPrimColor);
+
+        mSecondaryColor = (ColorPickerPreference) findPreference(INCALL_BG_SECONDARY);
+        mSecondaryColor.setOnPreferenceChangeListener(this);
+        intSecColor = Settings.System.getInt(getContentResolver(), Settings.System.INCALL_BG_SECONDARY, SECONDARY_DEFAULT);
+        hexSecColor = String.format("#%08x", (0xffffffff & intSecColor));
+        mSecondaryColor.setSummary(hexSecColor);
+        mSecondaryColor.setNewPreviewColor(intSecColor);
+
+
     }
 
     private void updateProximityDelaySummary(int value) {
@@ -147,7 +178,23 @@ public class InCallSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_AUTO_SPEAKER_INCALL_ONLY,
                     ((Boolean) newValue) ? 1 : 0);
             return true;
-        }
+        } else if (preference == mPrimaryColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.INCALL_BG_PRIMARY, intHex);
+            return true;
+        } else if (preference == mSecondaryColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.INCALL_BG_SECONDARY, intHex);
+            return true;
+	}
     
         return false;
     }

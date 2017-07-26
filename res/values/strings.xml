@@ -29,6 +29,7 @@
     <string name="incall_home_category">Home button options</string>
     <string name="incall_sensors_category">Sensors options</string>
     <string name="incall_record_category">Call recorder options</string>
+    <string name="incall_bg_category">Incall background</string>
     <string name="nightmode_category">Nightmode options</string>
     <string name="gestures_category">Gestures</string>
     <string name="music_category">Music</string>
@@ -1323,7 +1324,10 @@
     <string name="smart_mute_summary">Mute the incoming call by flipping the device</string>
     <string name="call_recording_title">Auto call recording</string>
     <string name="call_recording_summary">Recording automatically after call</string>
-
+    <string name="incall_bg_title">Allow to change colors</string>
+    <string name="incall_bg_summary">Allow to set user defined InCall UI colors</string>
+    <string name="incall_bg_primary_title">Incall primary background color</string>
+    <string name="incall_bg_seconady_title">Incall secondary background color</string>
 
     <!-- Nightmode temperature settings-->
     <string name="nightmode_temp_title">Allow to select comfort color temperature in NightMode</string>
@@ -1350,6 +1354,14 @@
     <!-- Data disabled icon -->
     <string name="data_disabled_icon_title">Show data disabled icon</string>
     <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
+
+    <string name="volume_timeout_title">Volume dialog timeout</string>
+
+    <string name="menu_disable_title">Incall disable</string>
+    <string name="menu_disable_summary">Disable button in when incall</string>
+    <string name="mtp_enabled_title">Enable MTP by default</string>
+    <string name="mtp_enabled_summary">Enable MTP by default after reboot</string>
+
 
 </resources>
 
