@@ -39,4 +39,10 @@
             android:layout="@layout/preference_notifications"
             android:title="@string/notifications_title" />
 
+         <PreferenceScreen
+            android:key="volume_panel"
+            android:fragment="org.aospextended.extensions.VolumePanel"
+            android:layout="@layout/preference_volume_panel"
+            android:title="@string/volume_panel_title" />   
+
 </PreferenceScreen>

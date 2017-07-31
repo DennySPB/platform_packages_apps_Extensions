@@ -32,6 +32,7 @@
     <string name="incall_bg_category">Incall background</string>
     <string name="nightmode_category">Nightmode options</string>
     <string name="gestures_category">Gestures</string>
+    <string name="volume_panel_category">Volume panel options</string>
     <string name="music_category">Music</string>
     <string name="weather_category">Lockscreen weather</string>
     <string name="security_category">Security</string>
@@ -98,6 +99,21 @@
 
     <!-- General Tweaks -->
     <string name="incall_title">In-call options</string>
+
+    <!-- Volume panel -->
+    <string name="volume_panel_title">Volume panel</string>
+    <string name="volume_timeout_title">Volume dialog timeout</string>
+    <string name="transparent_volume_dialog_title">Volume dialog transparency</string>
+    <string name="volume_dialog_stroke_title">Volume dialog stroke</string>
+    <string name="volume_dialog_stroke_disabled">Disabled</string>
+    <string name="volume_dialog_stroke_accent">Accent color</string>
+    <string name="volume_dialog_stroke_custom">Custom color</string>
+    <string name="volume_dialog_stroke_color_title">Volume dialog stroke color</string>
+    <string name="volume_dialog_stroke_thickness_title">Volume dialog stroke thickness</string>
+    <string name="volume_dialog_corner_radius_title">Volume dialog corner radius</string>
+    <string name="volume_dialog_dash_width_title">Volume dialog stroke dash width</string>
+    <string name="volume_dialog_dash_gap_title">Volume dialog stroke dash gap</string>
+
 
     <!-- Notifications -->
     <string name="notifications_title">Notifications</string>
@@ -1355,8 +1371,6 @@
     <string name="data_disabled_icon_title">Show data disabled icon</string>
     <string name="data_disabled_icon_summary">Display the cross sign next to signal bar when data is disabled</string>
 
-    <string name="volume_timeout_title">Volume dialog timeout</string>
-    <string name="transparent_volume_dialog_title">Volume dialog transparency</string>
 
     <string name="menu_disable_title">Incall disable</string>
     <string name="menu_disable_summary">Disable button in when incall</string>

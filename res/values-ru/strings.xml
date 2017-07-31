@@ -26,6 +26,7 @@
 	<string name="choose_app">Выбрать приложение</string>
 	<string name="general_category">Общие</string>
 	<string name="incall_vibration_category">Вибрация при звонке</string>
+	<string name="volume_panel_category">Опции панели громкости</string>
 	<string name="incall_home_category">Кнопка Домой</string>
 	<string name="incall_sensors_category">Датчики</string>
 	<string name="incall_record_category">Опции записи</string>
@@ -1228,8 +1229,20 @@
 	<string name="data_disabled_icon_title">Показывать значок отключенной передачи данных</string>
         <string name="data_disabled_icon_summary">Показывать крестик в значке уровня сети при отключенной передачи данных</string>
 
+	<!-- Volume dialog panel settings -->
+	<string name="volume_panel_title">Панель громкости</string>
 	<string name="volume_timeout_title">Время ожидания панели громкости</string>
         <string name="transparent_volume_dialog_title">Прозрачность панели громкости</string>
+	<string name="volume_dialog_stroke_title">Граница панели громкости</string>
+	<string name="volume_dialog_stroke_disabled">Выключено</string>
+	<string name="volume_dialog_stroke_accent">Цвет акцента</string>
+	<string name="volume_dialog_stroke_custom">Пользовательский цвет</string>
+	<string name="volume_dialog_stroke_color_title">Цвет ползунка громкости</string>
+	<string name="volume_dialog_stroke_thickness_title">Толщина ползунка громкости</string>
+	<string name="volume_dialog_corner_radius_title">Закругление углов панели громкости</string>
+	<string name="volume_dialog_dash_width_title">Ширина ползунка громкости</string>
+	<string name="volume_dialog_dash_gap_title">Толщина ползунка громкости</string>
+
         <string name="mtp_enabled_title">Включить MTP по умолчанию</string>
         <string name="mtp_enabled_summary">MTP будет включён по умолчанию</string>
 

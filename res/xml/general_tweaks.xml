@@ -34,24 +34,6 @@
         android:key="general_tweaks_general_category"
         android:title="@string/general_category">
 
-    <org.aospextended.extensions.preference.CustomSeekBarPreference
-        android:key="transparent_volume_dialog"
-        android:title="@string/transparent_volume_dialog_title"
-        settings:max="255"
-        settings:min="0"
-        settings:interval="1"
-        settings:units=""
-        android:persistent="false"/>
-
-    <org.aospextended.extensions.preference.CustomSeekBarPreference
-        android:key="volume_dialog_timeout"
-        android:title="@string/volume_timeout_title"
-        settings:max="10000"
-        settings:min="1000"
-        settings:units="ms"
-        settings:interval="500"
-        android:persistent="false"/>
-
         <ListPreference
             android:key="media_scanner_on_boot"
             android:title="@string/media_scanner_on_boot_title"
