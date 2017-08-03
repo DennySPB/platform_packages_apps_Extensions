@@ -185,7 +185,7 @@ public class VolumePanel extends SettingsPreferenceFragment implements
             return true;
 	} else if (preference == mVolumeDialogAlpha) {
 	    int valueVolumeAlpha = (Integer) newValue;
-            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.putInt(getContentResolver(),
                     Settings.System.TRANSPARENT_VOLUME_DIALOG, valueVolumeAlpha * 1);
             return true;
 	}

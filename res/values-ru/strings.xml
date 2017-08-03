@@ -604,7 +604,7 @@
 	<string name="volume_rocker_music_controls_summary">Когда экран выключен, долгое нажатие на кнопки громкости переключает композиции</string>
 	<!-- Volume key controls media stream -->
 	<string name="volume_keys_control_media_stream_title">Управление громкостью с помощью кнопок</string>
-	<string name="volume_keys_control_media_stream_summary">Управлению громкостью воспроизведения</string>
+	<string name="volume_keys_control_media_stream_summary">Управление громкостью воспроизведения</string>
 	<!-- Lockscreen battery info indicator  -->
 	<string name="lockscreen_battery_info_title">Информация о батарее на экране блокировки</string>
 	<string name="lockscreen_battery_info_summary">Показывать примерное максимальное текущее напряжение и температуру аккумулятора на экране блокировки во время зарядки</string>
