@@ -640,7 +640,7 @@
 	<string name="headset_connect_player_both_no_carkit">Когда подключена беспроводная либо проводная гарнитура (без carkit)</string>
 	<string name="headset_connect_player_both">Когда подключена проводная, либо беспроводная гарнитура</string>
 	<!-- Enable keys backlight-->
-	<string name="button_brightness_title">Включить подсветку</string>
+	<string name="button_brightness_title">Яркость подсветки кнопок</string>
 	<!-- QS Easy Toggle -->
 	<string name="qs_easy_toggle_title">Продвинутый переключатель быстрого доступа</string>
 	<string name="qs_easy_toggle_summary">Одно касание для включения/выключения мобильных данных, Wi-Fi, местоположения и Bluetooth</string>
@@ -1245,5 +1245,5 @@
 
         <string name="mtp_enabled_title">Включить MTP по умолчанию</string>
         <string name="mtp_enabled_summary">MTP будет включён по умолчанию</string>
-
+        <string name="long_press_timeout_title">Задержка нажатия и удержания</string>
 </resources>

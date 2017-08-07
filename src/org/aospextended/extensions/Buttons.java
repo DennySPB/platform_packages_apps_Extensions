@@ -56,6 +56,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
     private static final String KEY_BUTTON_BRIGHTNESS = "button_brightness";
     private static final String KEY_BACKLIGHT_TIMEOUT = "backlight_timeout";
+    private static final String LONG_PRESS_TIMEOUT = "long_press_timeout";
     private static final String HWKEY_DISABLE = "hardware_keys_disable";
     private static final String SWAP_VOLUME_BUTTONS = "swap_volume_keys_on_rotation";
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
@@ -88,6 +89,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
     private SwitchPreference mHwKeyBackAppDisable;
     private ListPreference mBacklightTimeout;
     private CustomSeekBarPreference mButtonBrightness;
+    private CustomSeekBarPreference mLPTimeout;
     private ListPreference mVolumeKeyCursorControl;
 
     private Handler mHandler;
@@ -105,6 +107,12 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
         mVolumeKeyCursorControl = initActionList(KEY_VOLUME_KEY_CURSOR_CONTROL,
                 cursorControlAction);
+
+        mLPTimeout = (CustomSeekBarPreference) findPreference(LONG_PRESS_TIMEOUT);
+        int longpress = Settings.Secure.getInt(resolver,
+                Settings.Secure.LONG_PRESS_TIMEOUT, 250);
+        mLPTimeout.setValue(longpress / 1);
+        mLPTimeout.setOnPreferenceChangeListener(this);
 
         final boolean needsNavbar = DUActionUtils.hasNavbarByDefault(getActivity());
         final PreferenceCategory hwkeyCat = (PreferenceCategory) prefScreen
@@ -313,6 +321,11 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
                     .findIndexOfValue(BacklightTimeout);
             mBacklightTimeout
                     .setSummary(mBacklightTimeout.getEntries()[BacklightTimeoutIndex]);
+            return true;
+        } else if (preference == mLPTimeout) {
+            int LPvalue = (Integer) objValue;
+            Settings.Secure.putInt(getActivity().getContentResolver(),
+                    Settings.Secure.LONG_PRESS_TIMEOUT, LPvalue * 1);
             return true;
         } else if (preference == mButtonBrightness) {
             int value = (Integer) objValue;

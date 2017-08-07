@@ -1376,6 +1376,7 @@
     <string name="menu_disable_summary">Disable button in when incall</string>
     <string name="mtp_enabled_title">Enable MTP by default</string>
     <string name="mtp_enabled_summary">Enable MTP by default after reboot</string>
+    <string name="long_press_timeout_title">Long press delay</string>
 
 
 </resources>
