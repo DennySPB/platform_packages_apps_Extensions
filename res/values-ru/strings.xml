@@ -1246,4 +1246,9 @@
         <string name="mtp_enabled_title">Включить MTP по умолчанию</string>
         <string name="mtp_enabled_summary">MTP будет включён по умолчанию</string>
         <string name="long_press_timeout_title">Задержка нажатия и удержания</string>
+
+        <!-- Notification guts kill app button -->
+	<string name="notification_guts_kill_app_button_title">Кнопка Закрыть приложение</string>
+        <string name="notification_guts_kill_app_button_summary">Отображать кнопку закрытия приложения в уведомлениях по длительному нажатию</string>
+
 </resources>

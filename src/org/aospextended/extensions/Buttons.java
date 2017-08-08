@@ -101,7 +101,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
         final ContentResolver resolver = getActivity().getContentResolver();
         final PreferenceScreen prefScreen = getPreferenceScreen();
-	final Resources res = getResources();
+        final Resources res = getResources();
 
         int cursorControlAction = Settings.System.getInt(resolver,
                 Settings.System.VOLUME_KEY_CURSOR_CONTROL, 0);
@@ -172,6 +172,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             prefScreen.removePreference(backCategory);
         }
 
+        mHwKeyWakeDisable = (SwitchPreference) findPreference(KEY_HOME_WAKE_SCREEN);
         // home key
         if (!hasHomeKey) {
             prefScreen.removePreference(homeCategory);
@@ -208,11 +209,13 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 	        mBacklightTimeout.setValue(Integer.toString(BacklightTimeout));
 	        mBacklightTimeout.setSummary(mBacklightTimeout.getEntry());
             }
-            if (mButtonBrightness != null) {
-                int ButtonBrightness = Settings.System.getInt(getContentResolver(),
-                                Settings.System.BUTTON_BRIGHTNESS, 255);
-                mButtonBrightness.setValue(ButtonBrightness / 1);
+         
+         if (mButtonBrightness != null) {
+            int ButtonBrightness = Settings.System.getInt(getContentResolver(),
+                                       Settings.System.BUTTON_BRIGHTNESS, 255);
+            mButtonBrightness.setValue(ButtonBrightness / 1);
                 mButtonBrightness.setOnPreferenceChangeListener(this);
+         }
         } else {
 		if(mBacklightTimeout != null) {
             prefScreen.removePreference(mBacklightTimeout);
@@ -245,8 +248,6 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
 
         // load preferences first
         setActionPreferencesEnabled(keysDisabled == 0);
-
-    }
     }
 
      @Override
@@ -332,8 +333,12 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.BUTTON_BRIGHTNESS, value * 1);
             return true;
+        } else if (preference == mHwKeyWakeDisable) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.HOME_WAKE_SCREEN, value ? 1 : 0);
+            return true;
         }
         return false;
     }
 }
-

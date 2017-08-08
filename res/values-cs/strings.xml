@@ -363,6 +363,7 @@
   <string name="smartbar_longpress_delay_default">Výchozí prodleva (rychle)</string>
   <string name="smartbar_longpress_delay_normal">Běžná prodleva</string>
   <string name="smartbar_longpress_delay_long">Dlouhá prodleva</string>
+  <string name="smartbar_custom_icon_size_title">Vlastní velikost ikon</string>
   <!-- QuickSettings haptic feedback -->
   <string name="quick_settings_vibrate_title">Vibrovat při dotyku</string>
   <string name="quick_settings_vibrate_summary">Vibrovat při dotyku dlaždice</string>
@@ -452,8 +453,8 @@
   <string name="screenshot_delay_title">Prodleva snímku obrazovky</string>
   <string name="screenshot_delay_summary">Upravit dobu, kdy je zachycen snímek obrazovky</string>
   <!-- Disabling FC notifications -->
-  <string name="disable_fc_notifications_title">Vypnout oznámení nuceného ukončení \'Force Close\'</string>
-  <string name="disable_fc_notifications_summary">Skryje všechny oznámení při vynuceném ukončení aplikace \'Force Close\'</string>
+  <string name="disable_fc_notifications_title">Zakázat oznámení vynuceného ukončení</string>
+  <string name="disable_fc_notifications_summary">Skryje všechny oznámení při vynuceném ukončení</string>
   <!-- Lockscreen Torch toggle -->
   <string name="keyguard_torch_title">Svítilna na zamykací obrazovce</string>
   <string name="keyguard_torch_summary">Dlouhým stiskem tlačítka power při vypnuté obrazovce zapnout svítilnu</string>
@@ -1058,4 +1059,9 @@
   <!-- Data disabled icon -->
   <string name="data_disabled_icon_title">Zobrazit ikonu při vypnutí dat</string>
   <string name="data_disabled_icon_summary">Zobrazit křížek na ikoně signálu sítě při vypnutých datech</string>
+  <!-- Incall vibrate options -->
+  <string name="incall_vibration_category">Možnosti vibrací při volání</string>
+  <string name="incall_vibrate_connect_title">Vibrovat při připojení</string>
+  <string name="incall_vibrate_call_wait_title">Vibrovat při čekajícím hovoru</string>
+  <string name="incall_vibrate_disconnect_title">Vibrovat při odpojení</string>
 </resources>

@@ -157,7 +157,7 @@
         android:key="home_key"
         android:title="@string/hardware_keys_home_key_title" >
 
-        <org.aospextended.extensions.preference.SystemSettingSwitchPreference
+        <SwitchPreference
             android:key="home_wake_screen"
             android:title="@string/button_wake_title"
             android:summary="@string/home_wake_summary"

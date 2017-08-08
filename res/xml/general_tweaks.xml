@@ -72,7 +72,6 @@
             android:key="screenshot_options"
             android:title="@string/screenshot_options_category" >
 
-
         <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="three_finger_gesture"
             android:title="@string/three_finger_gesture"
