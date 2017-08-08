@@ -1251,4 +1251,22 @@
 	<string name="notification_guts_kill_app_button_title">Кнопка Закрыть приложение</string>
         <string name="notification_guts_kill_app_button_summary">Отображать кнопку закрытия приложения в уведомлениях по длительному нажатию</string>
 
+        <!-- Pie -->
+        <string name="pie_enable_title">Включить управление Pie</string>
+        <string name="pie_settings">Настройки Pie</string>
+	<string name="pie_settings_summary">Настройка Pie по своему вкусу</string>
+        <string name="pie_theme_mode_title">Тема</string>
+        <string name="pie_auto">Автоматически</string>
+        <string name="pie_white">Светлая</string>
+        <string name="pie_dark">Тёмная</string>
+        <string name="pie_battery_title">Индикатор батареи</string>
+        <string name="pie_battery_text">Только теск</string>
+        <string name="pie_battery_circle">Только круг</string>
+        <string name="pie_battery_both">Оба</string>
+        <string name="pie_status_indicator">Индикатор сети</string>
+        <string name="pie_status_wifi">Только Wifi</string>
+        <string name="pie_status_mobile">Только мобильная сеть</string>
+        <string name="pie_status_none">Ничего</string>
+        <string name="pie_status_both">Оба</string>
+
 </resources>
