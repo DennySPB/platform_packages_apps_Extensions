@@ -1268,5 +1268,10 @@
         <string name="pie_status_mobile">Только мобильная сеть</string>
         <string name="pie_status_none">Ничего</string>
         <string name="pie_status_both">Оба</string>
+	<string name="pa_pie_gravity_title">Расположение Pie</string>
+        <string name="pa_pie_gravity_summary">Выберите место, где будет расположен Pie</string>
+        <string name="pa_pie_gravity_bottom">Снизу</string>
+	<string name="pa_pie_gravity_right">Справа</string>
+	<string name="pa_pie_gravity_left">Слева</string>
 
 </resources>
