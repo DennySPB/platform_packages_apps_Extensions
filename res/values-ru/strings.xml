@@ -1260,7 +1260,7 @@
         <string name="pie_white">Светлая</string>
         <string name="pie_dark">Тёмная</string>
         <string name="pie_battery_title">Индикатор батареи</string>
-        <string name="pie_battery_text">Только теск</string>
+        <string name="pie_battery_text">Только текст</string>
         <string name="pie_battery_circle">Только круг</string>
         <string name="pie_battery_both">Оба</string>
         <string name="pie_status_indicator">Индикатор сети</string>
@@ -1277,5 +1277,9 @@
         <!-- ANBI -->
         <string name="anbi_title">Случайное прикосновение</string>
 	<string name="anbi_summary">Запретить взаимодействие с навигационными кнопками во время касания экрана</string>
+
+        <!-- Sensor block per-package -->
+	<string name="sensor_block_title">Блокировка сенсора в приложениях</string>
+        <string name="sensor_block_summary">Блокировать доступ к определенным датчикам в некоторых приложениях для экономии заряда батареи.</string>
 
 </resources>
