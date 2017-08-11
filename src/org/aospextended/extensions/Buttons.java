@@ -173,6 +173,7 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
         }
 
         mHwKeyWakeDisable = (SwitchPreference) findPreference(KEY_HOME_WAKE_SCREEN);
+
         // home key
         if (!hasHomeKey) {
             prefScreen.removePreference(homeCategory);
@@ -182,6 +183,14 @@ public class Buttons extends ActionFragment implements OnPreferenceChangeListene
              if (!res.getBoolean(R.bool.config_show_homeWake)) {
              prefScreen.removePreference(mHwKeyWakeDisable);
             }
+	  else {
+	    boolean HwKeyWakeDisable = (Settings.System.getIntForUser(getContentResolver(),
+                    Settings.System.HOME_WAKE_SCREEN, 0,
+                    UserHandle.USER_CURRENT) == 1);
+            mHwKeyWakeDisable.setChecked(HwKeyWakeDisable);
+            mHwKeyWakeDisable.setOnPreferenceChangeListener(this);
+
+	  }
         }
 
         // App switch key (recents)
