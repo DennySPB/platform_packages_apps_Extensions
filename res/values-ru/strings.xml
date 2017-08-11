@@ -1281,5 +1281,8 @@
         <!-- Sensor block per-package -->
 	<string name="sensor_block_title">Блокировка сенсора в приложениях</string>
         <string name="sensor_block_summary">Блокировать доступ к определенным датчикам в некоторых приложениях для экономии заряда батареи.</string>
+	<!-- QS easy add -->
+        <string name="single_tap_tile_add_title">Лёгкое добавление плиток</string>
+        <string name="single_tap_tile_add_summary">Быстро добавляйте быстрые плитки, просто нажимая на них, а не перетаскивая</string>
 
 </resources>
