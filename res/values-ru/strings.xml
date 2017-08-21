@@ -548,8 +548,8 @@
 	<!-- Heads up settings -->
 	<string name="headsup_category">Настройки всплывающих уведомлений</string>
 	<string name="headsup_settings_title">Всплывающие уведомления</string>
-	<string name="summary_heads_up_enabled">Высплывающие уведомления включены</string>
-	<string name="summary_heads_up_disabled">Высплывающие уведомления выключены</string>
+	<string name="summary_heads_up_enabled">Всплывающие уведомления включены</string>
+	<string name="summary_heads_up_disabled">Всплывающие уведомления выключены</string>
 	<string name="heads_up_disabled_notice">Чтобы приложения могли отображать интерактивные уведомления во всплывающем окне на вашем экране, включите всплывающие уведомления.</string>
 	<!-- Heads up timeout -->
 	<string name="heads_up_time_out_title">Длительность</string>
