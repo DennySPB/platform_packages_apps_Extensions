@@ -1289,4 +1289,9 @@
         <string name="lockscreen_hide_status_bar_title">Строка состояния</string>
         <string name="lockscreen_hide_status_bar_summary">Отображать строку состояния на экране блокировки</string>
 
+	<!-- Blur on Lockscreen -->
+        <string name="lockscreen_blur_title">Размытие на экране блокировки</string>
+        <string name="lockscreen_blur_summary">Включить размытие на экране блокировки (требуется перезапуск системного интерфейса)</string>
+
+
 </resources>

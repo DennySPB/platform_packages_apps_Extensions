@@ -63,6 +63,12 @@
             android:summary="@string/lockscreen_hide_status_bar_summary"
             android:defaultValue="true" />
 
+	 <org.aospextended.extensions.preference.SecureSettingSwitchPreference
+            android:key="lock_screen_blur_enabled"
+            android:title="@string/lockscreen_blur_title"
+            android:summary="@string/lockscreen_blur_summary"
+            android:defaultValue="false" />
+
          <org.aospextended.extensions.preference.SystemSettingSwitchPreference
             android:key="show_lockscreen_clock"
             android:title="@string/hide_lockscreen_clock_title"

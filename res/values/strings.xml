@@ -1421,5 +1421,11 @@
     <!-- Hide Statusbar on Lockscreen -->
     <string name="lockscreen_hide_status_bar_title">Status bar</string>
     <string name="lockscreen_hide_status_bar_summary">Display status bar on lock screen</string>
+
+    <!-- Blur on Lockscreen -->
+    <string name="lockscreen_blur_title">Enable blur</string>
+    <string name="lockscreen_blur_summary">Enable blur on lock screen (SystemUI restart required)</string>
+
+
 </resources>
 
