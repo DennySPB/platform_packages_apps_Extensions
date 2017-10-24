@@ -556,7 +556,7 @@
   <!-- Hardware button navigation -->
   <string name="hardware_keys_volume_keys_title">Cursore del volume</string>
   <string name="hardware_keys_home_key_title">Pulsante home</string>
-  <string name="hardware_keys_menu_key_title">Pulsante menù</string>
+  <string name="hardware_keys_menu_key_title">Sensore di impronte digitali</string>
   <string name="hardware_keys_assist_key_title">Pulsante cerca</string>
   <string name="hardware_keys_appswitch_key_title">Pulsante generale</string>
   <string name="hardware_keys_back_key_title">Pulsante indietro</string>
