@@ -1293,5 +1293,7 @@
         <string name="lockscreen_blur_title">Размытие на экране блокировки</string>
         <string name="lockscreen_blur_summary">Включить размытие на экране блокировки (требуется перезапуск системного интерфейса)</string>
 
+	<string name="no_sim_cluster_switch_title">Скрыть неактивную сеть</string>
+        <string name="no_sim_cluster_switch_summary">Скрыть панель сети, если sim-карта неактивна и выключена. Если sim-карта не выключена, эта опция не будет работать</string>
 
 </resources>

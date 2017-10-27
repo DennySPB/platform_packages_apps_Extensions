@@ -1426,6 +1426,8 @@
     <string name="lockscreen_blur_title">Enable blur</string>
     <string name="lockscreen_blur_summary">Enable blur on lock screen (SystemUI restart required)</string>
 
+    <string name="no_sim_cluster_switch_title">No sim network hide</string>
+    <string name="no_sim_cluster_switch_summary">Hide the network bar if the subscription of sim is inactive and disabled. If sim is not disabled, this switch will not work</string>
 
 </resources>
 
